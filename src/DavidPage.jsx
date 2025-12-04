@@ -14,8 +14,7 @@ export default function DavidPage() {
   const timerRef = useRef(null);
 
   const backendBase =
-    import.meta?.env?.VITE_BACKEND_BASE ||
-    "https://minervaai-backend.onrender.com";
+   "https://minervaai-backend.onrender.com"
 
   const formatTime = (s) =>
     new Date(s * 1000).toISOString().slice(14, 19);
@@ -353,7 +352,7 @@ export default function DavidPage() {
           </div>
           <div>
             <h4 className="font-semibold mb-2">Contact</h4>
-            <p>hcontact@minerva-ai.io</p>
+            <p>contact@minerva-ai.io</p>
           </div>
         </div>
       </footer>
