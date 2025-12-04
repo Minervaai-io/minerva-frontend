@@ -3,12 +3,24 @@ import express from "express";
 import cors from "cors";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+const express = require("express");
+const cors = require("cors");
+const app = express();
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 // add your deployed frontend domain here later
 app.use(cors({ origin: ["http://localhost:5173"] }));
+app.use(
+  cors({
+    origin: "*", // temporarily allow all origins
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+app.use(express.json());
 
 const {
   RETELL_API_KEY,
@@ -95,6 +107,88 @@ app.post("/api/start-david-call", async (_req, res) => {
     res.status(502).json({ error: "Upstream error creating web call" });
   }
 });
+// Start Mark web demo call (Retell)
+app.post("/api/start-mark-call", async (req, res) => {
+  try {
+    const apiKey = process.env.RETELL_API_KEY;
+    const markAgentId = process.env.MARK_AGENT_ID;
+
+    if (!apiKey || !markAgentId) {
+      console.error("Missing RETELL_API_KEY or MARK_AGENT_ID");
+      return res
+        .status(500)
+        .json({ error: "Server misconfigured for Mark agent" });
+    }
+
+    const response = await fetch(
+      "https://api.retellai.com/v2/create-web-call",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({ agent_id: markAgentId }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok || !data?.access_token) {
+      console.error("Retell error for Mark:", data);
+      return res
+        .status(500)
+        .json({ error: "Failed to create Retell web call for Mark" });
+    }
+
+    return res.json({ access_token: data.access_token });
+  } catch (err) {
+    console.error("Error in /api/start-mark-call:", err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// Start Sarah web demo call (Retell)
+app.post("/api/start-sarah-call", async (req, res) => {
+  try {
+    const apiKey = process.env.RETELL_API_KEY;
+    const sarahAgentId = process.env.SARAH_AGENT_ID;
+
+    if (!apiKey || !sarahAgentId) {
+      console.error("Missing RETELL_API_KEY or SARAH_AGENT_ID");
+      return res
+        .status(500)
+        .json({ error: "Server misconfigured for Sarah agent" });
+    }
+
+    const response = await fetch(
+      "https://api.retellai.com/v2/create-web-call",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({ agent_id: sarahAgentId }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok || !data?.access_token) {
+      console.error("Retell error for Sarah:", data);
+      return res
+        .status(500)
+        .json({ error: "Failed to create Retell web call for Sarah" });
+    }
+
+    return res.json({ access_token: data.access_token });
+  } catch (err) {
+    console.error("Error in /api/start-sarah-call:", err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 
 // simple console logger (optional)
 app.post("/api/log-demo", (req, res) => {
