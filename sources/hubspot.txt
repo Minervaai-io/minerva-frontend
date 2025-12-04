@@ -1,0 +1,4 @@
+HubSpot brand guidance:
+- Trademark Usage Guidelines: https://legal.hubspot.com/tm-usage-guidelines
+- App Partner Branding Guidelines: https://www.hubspot.com/partners/app/branding-guidelines
+Notes: Usage can be restricted to partners/approved contexts. Obtain correct lockup when referencing integrations.
