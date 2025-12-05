@@ -1,26 +1,12 @@
-// server.js (ESM)
+// server.js - clean backend with CORS for Netlify + Render
+
 import express from "express";
 import cors from "cors";
-import fetch from "node-fetch";
 import dotenv from "dotenv";
-const express = require("express");
-const cors = require("cors");
-const app = express();
+
 dotenv.config();
 
 const app = express();
-app.use(express.json());
-// add your deployed frontend domain here later
-app.use(cors({ origin: ["http://localhost:5173"] }));
-app.use(
-  cors({
-    origin: "*", // temporarily allow all origins
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
-
-app.use(express.json());
 
 const {
   RETELL_API_KEY,
@@ -30,17 +16,37 @@ const {
   PORT = 4000,
 } = process.env;
 
+// Basic checks
 if (!RETELL_API_KEY) {
-  console.error("❌ Missing RETELL_API_KEY in .env");
-  process.exit(1);
-}
-if (!MARK_AGENT_ID && !SARAH_AGENT_ID && !DAVID_AGENT_ID) {
-  console.warn("⚠️ No agent ids set (MARK_AGENT_ID / SARAH_AGENT_ID / DAVID_AGENT_ID).");
+  console.error("❌ Missing RETELL_API_KEY in environment");
 }
 
+if (!MARK_AGENT_ID && !SARAH_AGENT_ID && !DAVID_AGENT_ID) {
+  console.warn(
+    "⚠️ No agent ids set (MARK_AGENT_ID / SARAH_AGENT_ID / DAVID_AGENT_ID)."
+  );
+}
+
+// 🔥 CORS: allow Netlify + any other origin for now
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+app.use(express.json());
+
+// Healthcheck
 app.get("/__health", (_req, res) => res.json({ ok: true }));
 
+// Helper: use global fetch (Node 18+ on Render)
 async function createWebCall(agentId) {
+  if (!RETELL_API_KEY) {
+    throw new Error("RETELL_API_KEY not configured");
+  }
+
   const resp = await fetch("https://api.retellai.com/v2/create-web-call", {
     method: "POST",
     headers: {
@@ -49,152 +55,127 @@ async function createWebCall(agentId) {
     },
     body: JSON.stringify({ agent_id: agentId }),
   });
+
   const raw = await resp.text();
-  if (!resp.ok) throw new Error(`Retell ${resp.status}: ${raw}`);
+
+  if (!resp.ok) {
+    console.error("Retell error:", resp.status, raw);
+    throw new Error(`Retell ${resp.status}`);
+  }
+
   return JSON.parse(raw); // { access_token, call_id, ... }
 }
 
-// Unified route: choose by key or pass agentId directly
+// Optional unified route
 app.post("/api/start-call", async (req, res) => {
   try {
     const { agentKey, agentId } = req.body || {};
-    const lookup = { mark: MARK_AGENT_ID, sarah: SARAH_AGENT_ID, david: DAVID_AGENT_ID };
+    const lookup = {
+      mark: MARK_AGENT_ID,
+      sarah: SARAH_AGENT_ID,
+      david: DAVID_AGENT_ID,
+    };
     const resolvedId = agentId || lookup[agentKey] || MARK_AGENT_ID;
-    if (!resolvedId) return res.status(400).json({ error: "Missing agent id" });
+
+    if (!resolvedId) {
+      return res.status(400).json({ error: "Missing agent id" });
+    }
 
     const data = await createWebCall(resolvedId);
-    console.log("▶️ start-call:", { agentKey: agentKey || "direct", agentId: resolvedId, call_id: data.call_id });
-    res.json({ access_token: data.access_token, call_id: data.call_id });
+    console.log("▶️ start-call:", {
+      agentKey: agentKey || "direct",
+      agentId: resolvedId,
+      call_id: data.call_id,
+    });
+
+    return res.json({
+      access_token: data.access_token,
+      call_id: data.call_id,
+    });
   } catch (e) {
-    console.error("start-call error:", e.message);
-    res.status(502).json({ error: "Upstream error creating web call" });
+    console.error("start-call error:", e);
+    return res
+      .status(502)
+      .json({ error: "Upstream error creating web call" });
   }
 });
 
-// Dedicated routes (one per agent)
+// Dedicated routes used by frontend
 app.post("/api/start-mark-call", async (_req, res) => {
   try {
-    if (!MARK_AGENT_ID) return res.status(400).json({ error: "MARK_AGENT_ID not set" });
+    if (!MARK_AGENT_ID) {
+      return res.status(400).json({ error: "MARK_AGENT_ID not set" });
+    }
+
     const data = await createWebCall(MARK_AGENT_ID);
     console.log("▶️ mark-call:", { call_id: data.call_id });
-    res.json({ access_token: data.access_token, call_id: data.call_id });
+
+    return res.json({
+      access_token: data.access_token,
+      call_id: data.call_id,
+    });
   } catch (e) {
-    console.error("mark-call error:", e.message);
-    res.status(502).json({ error: "Upstream error creating web call" });
+    console.error("mark-call error:", e);
+    return res
+      .status(502)
+      .json({ error: "Upstream error creating web call" });
   }
 });
 
 app.post("/api/start-sarah-call", async (_req, res) => {
   try {
-    if (!SARAH_AGENT_ID) return res.status(400).json({ error: "SARAH_AGENT_ID not set" });
+    if (!SARAH_AGENT_ID) {
+      return res.status(400).json({ error: "SARAH_AGENT_ID not set" });
+    }
+
     const data = await createWebCall(SARAH_AGENT_ID);
     console.log("▶️ sarah-call:", { call_id: data.call_id });
-    res.json({ access_token: data.access_token, call_id: data.call_id });
+
+    return res.json({
+      access_token: data.access_token,
+      call_id: data.call_id,
+    });
   } catch (e) {
-    console.error("sarah-call error:", e.message);
-    res.status(502).json({ error: "Upstream error creating web call" });
+    console.error("sarah-call error:", e);
+    return res
+      .status(502)
+      .json({ error: "Upstream error creating web call" });
   }
 });
 
 app.post("/api/start-david-call", async (_req, res) => {
   try {
-    if (!DAVID_AGENT_ID) return res.status(400).json({ error: "DAVID_AGENT_ID not set" });
+    if (!DAVID_AGENT_ID) {
+      return res.status(400).json({ error: "DAVID_AGENT_ID not set" });
+    }
+
     const data = await createWebCall(DAVID_AGENT_ID);
     console.log("▶️ david-call:", { call_id: data.call_id });
-    res.json({ access_token: data.access_token, call_id: data.call_id });
+
+    return res.json({
+      access_token: data.access_token,
+      call_id: data.call_id,
+    });
   } catch (e) {
-    console.error("david-call error:", e.message);
-    res.status(502).json({ error: "Upstream error creating web call" });
-  }
-});
-// Start Mark web demo call (Retell)
-app.post("/api/start-mark-call", async (req, res) => {
-  try {
-    const apiKey = process.env.RETELL_API_KEY;
-    const markAgentId = process.env.MARK_AGENT_ID;
-
-    if (!apiKey || !markAgentId) {
-      console.error("Missing RETELL_API_KEY or MARK_AGENT_ID");
-      return res
-        .status(500)
-        .json({ error: "Server misconfigured for Mark agent" });
-    }
-
-    const response = await fetch(
-      "https://api.retellai.com/v2/create-web-call",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({ agent_id: markAgentId }),
-      }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok || !data?.access_token) {
-      console.error("Retell error for Mark:", data);
-      return res
-        .status(500)
-        .json({ error: "Failed to create Retell web call for Mark" });
-    }
-
-    return res.json({ access_token: data.access_token });
-  } catch (err) {
-    console.error("Error in /api/start-mark-call:", err);
-    res.status(500).json({ error: "Internal server error" });
+    console.error("david-call error:", e);
+    return res
+      .status(502)
+      .json({ error: "Upstream error creating web call" });
   }
 });
 
-// Start Sarah web demo call (Retell)
-app.post("/api/start-sarah-call", async (req, res) => {
-  try {
-    const apiKey = process.env.RETELL_API_KEY;
-    const sarahAgentId = process.env.SARAH_AGENT_ID;
-
-    if (!apiKey || !sarahAgentId) {
-      console.error("Missing RETELL_API_KEY or SARAH_AGENT_ID");
-      return res
-        .status(500)
-        .json({ error: "Server misconfigured for Sarah agent" });
-    }
-
-    const response = await fetch(
-      "https://api.retellai.com/v2/create-web-call",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({ agent_id: sarahAgentId }),
-      }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok || !data?.access_token) {
-      console.error("Retell error for Sarah:", data);
-      return res
-        .status(500)
-        .json({ error: "Failed to create Retell web call for Sarah" });
-    }
-
-    return res.json({ access_token: data.access_token });
-  } catch (err) {
-    console.error("Error in /api/start-sarah-call:", err);
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
-
-
-// simple console logger (optional)
+// Simple logger
 app.post("/api/log-demo", (req, res) => {
   const { name = "", email = "", event = "" } = req.body || {};
-  console.log("LOG DEMO:", { name, email, event, at: new Date().toISOString() });
+  console.log("LOG DEMO:", {
+    name,
+    email,
+    event,
+    at: new Date().toISOString(),
+  });
   res.json({ ok: true });
 });
 
-app.listen(PORT, () => console.log(`Backend running on ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`✅ Backend running on port ${PORT}`);
+});
