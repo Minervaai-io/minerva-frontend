@@ -1,5 +1,5 @@
 // server.js - CommonJS backend with CORS for Netlify + Render
-
+console.log(">>> server.js STARTING");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
