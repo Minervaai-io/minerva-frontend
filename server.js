@@ -1,12 +1,10 @@
-// server.js - clean backend with CORS for Netlify + Render
+// server.js - CommonJS backend with CORS for Netlify + Render
 
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
 
 dotenv.config();
-
-const app = express();
 
 const {
   RETELL_API_KEY,
@@ -16,18 +14,9 @@ const {
   PORT = 4000,
 } = process.env;
 
-// Basic checks
-if (!RETELL_API_KEY) {
-  console.error("❌ Missing RETELL_API_KEY in environment");
-}
+const app = express();
 
-if (!MARK_AGENT_ID && !SARAH_AGENT_ID && !DAVID_AGENT_ID) {
-  console.warn(
-    "⚠️ No agent ids set (MARK_AGENT_ID / SARAH_AGENT_ID / DAVID_AGENT_ID)."
-  );
-}
-
-// 🔥 CORS: allow Netlify + any other origin for now
+// CORS: allow Netlify + anything else for now
 app.use(
   cors({
     origin: "*",
