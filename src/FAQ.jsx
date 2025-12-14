@@ -7,7 +7,7 @@ const QA = [
   },
   {
     q: "Which languages and accents do you support?",
-    a: "Multiple languages are supported. (e.g Russian, French, Germany and many more) and can deploy additional voices per market.",
+    a: "Multiple languages are supported. (e.g Russian, French, Chinese and many more) and can deploy additional voices per market.",
   },
   {
     q: "Can you book on our calendars?",
