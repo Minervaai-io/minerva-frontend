@@ -88,7 +88,7 @@ export default function Contact() {
             <span className="text-gray-500 text-sm">or</span>
 
             <a
-              href="https://calendly.com/YOUR_CALENDLY_LINK"
+              href="https://calendly.com/cryptoaiking99/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-white border-2 border-indigo-700 text-indigo-700 font-semibold hover:bg-indigo-50"
