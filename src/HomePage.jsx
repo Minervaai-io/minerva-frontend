@@ -42,15 +42,14 @@ export default function HomePage() {
     setCurrentIndex((prev) => (prev === agents.length - 1 ? 0 : prev + 1));
   };
 
-  return (
-<Helmet>
-  <title>Minerva AI — AI Agents for Real Estate | Never Miss a Lead</title>
-  <meta name="description" content="Minerva AI gives real estate brokerages 24/7 AI agents that instantly call back leads, handle inbound enquiries and follow 
-up automatically. Book a free demo today." />
-</Helmet>
-
-    <div className="min-h-screen bg-gray-50 text-gray-900">
-      {/* HEADER */}
+return (
+  <>
+    <Helmet>
+      <title>Minerva AI — AI Agents for Real Estate | Never Miss a Lead</title>
+      <meta name="description" content="Minerva AI gives real estate brokerages 24/7 AI agents that instantly call back leads, handle inbound enquiries and follow up 
+automatically. Book a free demo today." />
+    </Helmet>
+    <div className="min-h-screen bg-gray-50 text-gray-900">      {/* HEADER */}
       <header className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between relative">
         <div className="flex items-center gap-4">
           <img src="/minerva-logo.png" alt="Minerva Logo" className="w-24 h-24 rounded-full" />
@@ -59,7 +58,6 @@ up automatically. Book a free demo today." />
             <p className="text-sm text-gray-500">Your AI outreach team that never sleeps.</p>
           </div>
         </div>
-
         {/* Sidebar Menu Toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -215,5 +213,5 @@ up automatically. Book a free demo today." />
         </div>
       </footer>
     </div>
+  </>
   );
-}
