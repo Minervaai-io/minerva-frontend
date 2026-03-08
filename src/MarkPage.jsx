@@ -14,9 +14,7 @@ export default function MarkPage() {
   const timerRef = useRef(null);
 
   // 🔹 Updated: default to Render backend instead of localhost
-  const backendBase =
-    import.meta?.env?.VITE_BACKEND_BASE ||
-    "https://minervaai-backend.onrender.com";
+  const backendBase = "https://minervaai-backend.onrender.com";
 
   // a11y focus trap for modal
   useEffect(() => {
