@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { RetellWebClient } from "retell-client-js-sdk";
 import { PhoneCall, Clock, CalendarCheck, Shield, CheckCircle } from "lucide-react";
 
@@ -94,6 +95,11 @@ export default function MarkPage() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Meet Mark — AI Lead Callback Agent for Real Estate | Minerva AI</title>
+      <meta name="description" content="Mark calls back your ad leads within 60 seconds, qualifies prospects and books viewings automatically. Never lose another lead." />
+    </Helmet>
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Header */}
       <header className="px-6 py-5 border-b bg-white sticky top-0 z-40">
@@ -318,5 +324,6 @@ export default function MarkPage() {
         </div>
       </footer>
     </div>
+  </>
   );
 }

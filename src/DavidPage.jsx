@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { RetellWebClient } from "retell-client-js-sdk";
 import { RefreshCcw, CalendarCheck, Shield, Clock } from "lucide-react";
 
@@ -107,6 +108,11 @@ export default function DavidPage() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Meet David — AI Lead Nurture Agent for Real Estate | Minerva AI</title>
+      <meta name="description" content="David re-engages warm and old leads automatically, refreshes their intent and books the next step. Stop letting cold leads go to waste." />
+    </Helmet>
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <header className="px-6 py-5 border-b bg-white sticky top-0 z-40">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -357,5 +363,6 @@ export default function DavidPage() {
         </div>
       </footer>
     </div>
+  </>
   );
 }

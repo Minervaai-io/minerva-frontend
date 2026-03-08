@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 import { RetellWebClient } from "retell-client-js-sdk";
 import { PhoneCall, CalendarCheck, Shield, MessageSquare } from "lucide-react";
 
@@ -109,6 +110,11 @@ export default function SarahPage() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Meet Sarah — AI Inbound Concierge for Real Estate | Minerva AI</title>
+      <meta name="description" content="Sarah answers inbound calls from your website, Instagram and Google 24/7, handles FAQs and books viewings automatically. Never miss an inbound enquiry again." />
+    </Helmet>
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <header className="px-6 py-5 border-b bg-white sticky top-0 z-40">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -358,5 +364,6 @@ export default function SarahPage() {
         </div>
       </footer>
     </div>
+  </>
   );
 }
