@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from 'react-helmet-async';
 import { ChevronLeft, ChevronRight, Menu } from "lucide-react";
 import IntegrationsBar from "./IntegrationsBar";
 import Integrations from "./Integrations";
@@ -42,6 +43,12 @@ export default function HomePage() {
   };
 
   return (
+<Helmet>
+  <title>Minerva AI — AI Agents for Real Estate | Never Miss a Lead</title>
+  <meta name="description" content="Minerva AI gives real estate brokerages 24/7 AI agents that instantly call back leads, handle inbound enquiries and follow 
+up automatically. Book a free demo today." />
+</Helmet>
+
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* HEADER */}
       <header className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between relative">
