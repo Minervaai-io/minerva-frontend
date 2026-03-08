@@ -1,10 +1,8 @@
 // server.js - CommonJS backend with CORS for Netlify + Render
-
+console.log(">>> server.js STARTING");
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-
-console.log(">>> server.js STARTING (CJS)");
 
 dotenv.config();
 
@@ -32,7 +30,7 @@ app.use(express.json());
 // Healthcheck
 app.get("/__health", (_req, res) => res.json({ ok: true }));
 
-// Helper: call Retell using Node 23 global fetch
+// Helper: use global fetch (Node 18+ on Render)
 async function createWebCall(agentId) {
   if (!RETELL_API_KEY) {
     throw new Error("RETELL_API_KEY not configured");

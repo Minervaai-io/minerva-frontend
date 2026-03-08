@@ -1,31 +1,21 @@
 {
-  "name": "minerva-backend",
+  "name": "minerva-ai",
+  "private": true,
   "version": "1.0.0",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
     "build": "vite build",
-    "postbuild": "react-snap"
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@vitejs/plugin-react": "^5.1.4",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "express-list-endpoints": "^7.1.1",
-    "googleapis": "^166.0.0",
-    "node-fetch": "^3.3.2",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-router-dom": "^7.13.1",
-    "vite": "^7.3.1"
+    "lucide-react": "^0.453.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "retell-client-js-sdk": "^2.0.7"
   },
   "devDependencies": {
-    "react-snap": "^1.23.0"
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0"
   }
 }
