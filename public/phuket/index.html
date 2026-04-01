@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minerva | Phuket Property Investment</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1425226769080890');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1425226769080890&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--c-ink:#0a1628;--c-deep:#122240;--c-slate:#1a3055;--c-gold:#c9a55c;--c-gold-light:#e0c989;
+--c-cream:#f5f0e8;--c-white:#ffffff;--c-muted:#8a96a8;--c-divider:rgba(201,165,92,.2);
+--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;
+--ease:cubic-bezier(.25,.46,.45,.94);--ease-out:cubic-bezier(.16,1,.3,1);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-body);color:var(--c-cream);background:var(--c-ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ──── NAV ──── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(20px);background:rgba(10,22,40,.7);border-bottom:1px solid var(--c-divider);transition:all .4s var(--ease)}
+.nav.scrolled{padding:.75rem 2rem;background:rgba(10,22,40,.92)}
+.nav-logo{font-family:var(--font-display);font-size:1.5rem;font-weight:600;letter-spacing:.08em;color:var(--c-gold)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:.85rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--c-muted);transition:color .3s}
+.nav-links a:hover{color:var(--c-gold)}
+.nav-cta{background:var(--c-gold);color:var(--c-ink);padding:.6rem 1.5rem;border-radius:2px;font-weight:600;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transition:all .3s var(--ease)}
+.nav-cta:hover{background:var(--c-gold-light);transform:translateY(-1px)}
+
+/* ──── HERO ──── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:8rem 2rem 4rem}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a1628 0%,#122240 30%,#1a3055 60%,#0f1d35 100%);z-index:0}
+.hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(201,165,92,.06) 0%,transparent 60%)}
+.hero-pattern{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(0deg,transparent,transparent 100px,rgba(201,165,92,.3) 100px,rgba(201,165,92,.3) 101px),repeating-linear-gradient(90deg,transparent,transparent 100px,rgba(201,165,92,.3) 100px,rgba(201,165,92,.3) 101px)}
+.hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--c-gold);margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s var(--ease-out) .2s forwards}
+.hero-tag::before{content:'';width:24px;height:1px;background:var(--c-gold)}
+.hero-title{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:500;line-height:1.1;color:var(--c-cream);margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s var(--ease-out) .35s forwards}
+.hero-title em{font-style:italic;color:var(--c-gold)}
+.hero-sub{font-size:1.1rem;line-height:1.7;color:var(--c-muted);max-width:520px;margin-bottom:2rem;opacity:0;animation:fadeUp .8s var(--ease-out) .5s forwards}
+.hero-stats{display:flex;gap:2.5rem;opacity:0;animation:fadeUp .8s var(--ease-out) .65s forwards}
+.hero-stat{text-align:left}
+.hero-stat-num{font-family:var(--font-display);font-size:2rem;font-weight:600;color:var(--c-gold)}
+.hero-stat-label{font-size:.75rem;color:var(--c-muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+
+/* ──── LEAD FORM ──── */
+.lead-form-card{background:rgba(255,255,255,.04);border:1px solid var(--c-divider);border-radius:4px;padding:2.5rem 2rem;position:relative;opacity:0;animation:fadeUp .8s var(--ease-out) .5s forwards}
+.lead-form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-gold),var(--c-gold-light),var(--c-gold))}
+.form-title{font-family:var(--font-display);font-size:1.4rem;font-weight:500;color:var(--c-cream);margin-bottom:.4rem}
+.form-subtitle{font-size:.85rem;color:var(--c-muted);margin-bottom:1.5rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--c-muted);margin-bottom:.4rem}
+.form-group input,.form-group select{width:100%;padding:.75rem 1rem;background:rgba(255,255,255,.05);border:1px solid rgba(201,165,92,.15);border-radius:2px;color:var(--c-cream);font-family:var(--font-body);font-size:.9rem;transition:border-color .3s}
+.form-group input::placeholder{color:rgba(138,150,168,.5)}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--c-gold);background:rgba(255,255,255,.07)}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a55c' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.form-group select option{background:var(--c-deep);color:var(--c-cream)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.form-submit{width:100%;padding:.9rem;background:var(--c-gold);color:var(--c-ink);border:none;border-radius:2px;font-family:var(--font-body);font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s var(--ease);margin-top:.5rem}
+.form-submit:hover{background:var(--c-gold-light);transform:translateY(-1px);box-shadow:0 4px 20px rgba(201,165,92,.3)}
+.form-trust{text-align:center;font-size:.7rem;color:var(--c-muted);margin-top:.75rem}
+.form-whatsapp{display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1rem;padding:.7rem;border:1px solid rgba(37,211,102,.3);border-radius:2px;color:#25d366;font-size:.8rem;font-weight:500;cursor:pointer;transition:all .3s}
+.form-whatsapp:hover{background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.5)}
+.form-whatsapp svg{width:18px;height:18px;fill:#25d366}
+
+/* ──── SECTION COMMON ──── */
+.section{padding:6rem 2rem;max-width:1200px;margin:0 auto}
+.section-tag{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--c-gold);margin-bottom:.75rem}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:500;color:var(--c-cream);line-height:1.15;margin-bottom:1rem}
+.section-sub{font-size:1rem;color:var(--c-muted);line-height:1.7;max-width:600px;margin-bottom:3rem}
+.divider{height:1px;background:var(--c-divider);max-width:1200px;margin:0 auto}
+
+/* ──── WHY PHUKET ──── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-card{background:rgba(255,255,255,.02);border:1px solid var(--c-divider);border-radius:4px;padding:2rem 1.5rem;transition:all .4s var(--ease);position:relative;overflow:hidden}
+.why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c-gold),transparent);opacity:0;transition:opacity .4s}
+.why-card:hover{border-color:rgba(201,165,92,.35);transform:translateY(-2px)}.why-card:hover::before{opacity:1}
+.why-num{font-family:var(--font-display);font-size:2.5rem;font-weight:300;color:rgba(201,165,92,.2);margin-bottom:.5rem}
+.why-card h3{font-size:1rem;font-weight:600;color:var(--c-cream);margin-bottom:.5rem}
+.why-card p{font-size:.85rem;color:var(--c-muted);line-height:1.6}
+
+/* ──── AREAS ──── */
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.area-card{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/5;cursor:pointer;border:1px solid var(--c-divider);transition:all .4s var(--ease)}
+.area-card:hover{border-color:var(--c-gold);transform:translateY(-3px)}
+.area-card-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,40,.1) 0%,rgba(10,22,40,.85) 70%,rgba(10,22,40,.95) 100%)}
+.area-card-inner{position:absolute;bottom:0;left:0;right:0;padding:1.5rem}
+.area-card h3{font-family:var(--font-display);font-size:1.3rem;font-weight:500;color:var(--c-cream);margin-bottom:.3rem}
+.area-card .area-type{font-size:.7rem;color:var(--c-gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+.area-stats{display:flex;gap:1.5rem}
+.area-stats span{font-size:.75rem;color:var(--c-muted)}
+.area-stats strong{color:var(--c-cream);font-weight:600}
+
+/* ──── PROCESS ──── */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative}
+.process-steps::before{content:'';position:absolute;top:28px;left:calc(12.5% + 20px);right:calc(12.5% + 20px);height:1px;background:var(--c-divider)}
+.process-step{text-align:center}
+.process-icon{width:56px;height:56px;border-radius:50%;border:1px solid var(--c-gold);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;position:relative;z-index:2;background:var(--c-ink);font-family:var(--font-display);font-size:1.1rem;color:var(--c-gold)}
+.process-step h3{font-size:.9rem;font-weight:600;color:var(--c-cream);margin-bottom:.4rem}
+.process-step p{font-size:.8rem;color:var(--c-muted);line-height:1.5}
+
+/* ──── TESTIMONIALS ──── */
+.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.testimonial-card{background:rgba(255,255,255,.02);border:1px solid var(--c-divider);border-radius:4px;padding:2rem}
+.testimonial-quote{font-family:var(--font-display);font-size:1rem;font-style:italic;color:var(--c-cream);line-height:1.7;margin-bottom:1.5rem;position:relative;padding-left:1.5rem;border-left:2px solid var(--c-gold)}
+.testimonial-author{font-size:.8rem;font-weight:600;color:var(--c-gold)}
+.testimonial-detail{font-size:.75rem;color:var(--c-muted);margin-top:.2rem}
+
+/* ──── FAQ ──── */
+.faq-list{max-width:800px}
+.faq-item{border-bottom:1px solid var(--c-divider);padding:1.5rem 0}
+.faq-q{font-size:1rem;font-weight:600;color:var(--c-cream);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q::after{content:'+';font-size:1.4rem;color:var(--c-gold);transition:transform .3s;flex-shrink:0}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease),padding .4s}
+.faq-item.open .faq-a{max-height:300px;padding-top:1rem}
+.faq-a p{font-size:.9rem;color:var(--c-muted);line-height:1.7}
+
+/* ──── CTA BANNER ──── */
+.cta-banner{position:relative;padding:5rem 2rem;text-align:center;overflow:hidden}
+.cta-banner-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--c-deep) 0%,var(--c-slate) 50%,var(--c-deep) 100%)}
+.cta-banner-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(201,165,92,.08) 0%,transparent 60%)}
+.cta-banner-content{position:relative;z-index:2;max-width:700px;margin:0 auto}
+.cta-banner-content h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:500;color:var(--c-cream);margin-bottom:1rem}
+.cta-banner-content p{font-size:1rem;color:var(--c-muted);margin-bottom:2rem;line-height:1.7}
+.cta-btn{display:inline-block;padding:1rem 3rem;background:var(--c-gold);color:var(--c-ink);font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:all .3s var(--ease)}
+.cta-btn:hover{background:var(--c-gold-light);transform:translateY(-2px);box-shadow:0 6px 30px rgba(201,165,92,.3)}
+
+/* ──── FOOTER ──── */
+.footer{padding:3rem 2rem;text-align:center;border-top:1px solid var(--c-divider)}
+.footer-logo{font-family:var(--font-display);font-size:1.2rem;font-weight:600;letter-spacing:.08em;color:var(--c-gold);margin-bottom:.75rem}
+.footer p{font-size:.75rem;color:var(--c-muted)}
+
+/* ──── STICKY WHATSAPP ──── */
+.sticky-wa{position:fixed;bottom:1.5rem;right:1.5rem;z-index:90;width:56px;height:56px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;animation:pulse 2s infinite}
+.sticky-wa:hover{transform:scale(1.08)}
+.sticky-wa svg{width:28px;height:28px;fill:white}
+
+/* ──── ANIMATIONS ──── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.6)}}
+
+.reveal{opacity:0;transform:translateY(30px);transition:all .7s var(--ease-out)}.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ──── MOBILE ──── */
+@media(max-width:900px){
+.nav-links{display:none}
+.hero-content{grid-template-columns:1fr;text-align:center;padding-top:2rem}
+.hero-sub{margin-left:auto;margin-right:auto}
+.hero-stats{justify-content:center}
+.hero-tag{justify-content:center}
+.lead-form-card{max-width:480px;margin:0 auto}
+.why-grid,.areas-grid{grid-template-columns:1fr}
+.process-steps{grid-template-columns:1fr 1fr;gap:1.5rem}
+.process-steps::before{display:none}
+.testimonials-grid{grid-template-columns:1fr}
+.form-row{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+.hero{padding:7rem 1rem 3rem}
+.section{padding:4rem 1rem}
+.lead-form-card{padding:1.5rem 1.25rem}
+.process-steps{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">MINERVA</div>
+  <div class="nav-links">
+    <a href="#why">Why Phuket</a>
+    <a href="#areas">Top Areas</a>
+    <a href="#process">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="#form" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-tag">Phuket Property Investment</div>
+      <h1 class="hero-title">Invest in Phuket.<br><em>Live the return.</em></h1>
+      <p class="hero-sub">Access exclusive villas, condos, and branded residences in Southeast Asia's most resilient property market. Rental yields up to 8%. Full foreign ownership structures available.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">8%+</div>
+          <div class="hero-stat-label">Rental yields</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">10%</div>
+          <div class="hero-stat-label">Annual price growth</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">60%+</div>
+          <div class="hero-stat-label">Foreign buyers</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEAD FORM -->
+    <div class="lead-form-card" id="form">
+      <div class="form-title">Get your free consultation</div>
+      <div class="form-subtitle">Speak with a Phuket property specialist within 24 hours.</div>
+      <form id="leadForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label>Full name</label>
+          <input type="text" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="you@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone (with country code)</label>
+          <input type="tel" name="phone" placeholder="+66 XX XXX XXXX" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Property type</label>
+            <select name="property_type" required>
+              <option value="" disabled selected>Select</option>
+              <option value="condo">Condo</option>
+              <option value="villa">Villa</option>
+              <option value="branded">Branded residence</option>
+              <option value="land">Land</option>
+              <option value="any">Open to all</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Budget range (THB)</label>
+            <select name="budget" required>
+              <option value="" disabled selected>Select</option>
+              <option value="under_5m">Under 5M</option>
+              <option value="5m_15m">5M – 15M</option>
+              <option value="15m_40m">15M – 40M</option>
+              <option value="40m_100m">40M – 100M</option>
+              <option value="100m_plus">100M+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Purchase timeline</label>
+            <select name="timeline" required>
+              <option value="" disabled selected>Select</option>
+              <option value="1_3_months">1 – 3 months</option>
+              <option value="3_6_months">3 – 6 months</option>
+              <option value="6_12_months">6 – 12 months</option>
+              <option value="browsing">Just browsing</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp available?</label>
+            <select name="whatsapp">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+        <!-- Hidden UTM fields -->
+        <input type="hidden" name="utm_source" id="utm_source">
+        <input type="hidden" name="utm_medium" id="utm_medium">
+        <input type="hidden" name="utm_campaign" id="utm_campaign">
+        <input type="hidden" name="utm_content" id="utm_content">
+        <input type="hidden" name="utm_term" id="utm_term">
+        <button type="submit" class="form-submit">Request Free Consultation</button>
+      </form>
+      <div class="form-trust">No spam. No obligation. Your data is secure.</div>
+      <a href="https://wa.me/66XXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20Phuket%20property" class="form-whatsapp" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat with us on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PHUKET -->
+<div class="divider"></div>
+<section class="section" id="why">
+  <div class="section-tag reveal">Why Phuket</div>
+  <h2 class="section-title reveal">The numbers speak<br>for themselves.</h2>
+  <p class="section-sub reveal">Phuket's cash-based, tourism-driven property market has outperformed mortgage-dependent resort markets for over two decades.</p>
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-num">01</div>
+      <h3>Cash-based stability</h3>
+      <p>Over 90% of transactions are cash. No mortgage bubbles, no credit crunches. Phuket's market stayed stable through 2008 and COVID while Mallorca crashed.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-num">02</div>
+      <h3>8–10% price growth</h3>
+      <p>Premium properties are appreciating 8–10% annually, with luxury beachfront villas seeing up to 15% year-on-year growth in top locations.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-num">03</div>
+      <h3>Strong rental yields</h3>
+      <p>Well-managed villas and condos deliver 6–8% net rental yields, driven by 4 million+ international tourists annually and growing digital nomad demand.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-num">04</div>
+      <h3>Foreign ownership</h3>
+      <p>Foreigners can own freehold condominiums outright. Villas are accessible through established leasehold and company structures used for decades.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-num">05</div>
+      <h3>Limited prime supply</h3>
+      <p>Beachfront and west-coast land is running out. Scarcity is driving prices up in Bang Tao, Kamala, and Surin — the window is narrowing.</p>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-num">06</div>
+      <h3>Lifestyle + returns</h3>
+      <p>World-class beaches, international schools, premium healthcare, and year-round sunshine. Your investment is also your escape.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TOP AREAS -->
+<div class="divider"></div>
+<section class="section" id="areas">
+  <div class="section-tag reveal">Top Investment Areas</div>
+  <h2 class="section-title reveal">Where the smart<br>money is going.</h2>
+  <p class="section-sub reveal">Each area has a distinct character and investment profile. We match you with the right location for your goals.</p>
+  <div class="areas-grid">
+    <div class="area-card reveal" style="background:linear-gradient(180deg,#2a4a6b,#1a3050)">
+      <div class="area-card-bg"></div>
+      <div class="area-card-inner">
+        <div class="area-type">Premium beachfront</div>
+        <h3>Bang Tao / Laguna</h3>
+        <div class="area-stats">
+          <span>Yield: <strong>7–8%</strong></span>
+          <span>Growth: <strong>10–12%</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="area-card reveal" style="background:linear-gradient(180deg,#3a5a5b,#1a3535)">
+      <div class="area-card-bg"></div>
+      <div class="area-card-inner">
+        <div class="area-type">Luxury & privacy</div>
+        <h3>Kamala</h3>
+        <div class="area-stats">
+          <span>Yield: <strong>6–7%</strong></span>
+          <span>Growth: <strong>8–10%</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="area-card reveal" style="background:linear-gradient(180deg,#4a3a5b,#2a1a35)">
+      <div class="area-card-bg"></div>
+      <div class="area-card-inner">
+        <div class="area-type">Emerging hub</div>
+        <h3>Cherng Talay</h3>
+        <div class="area-stats">
+          <span>Yield: <strong>6–8%</strong></span>
+          <span>Growth: <strong>12–15%</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="area-card reveal" style="background:linear-gradient(180deg,#5a4a3b,#352a1a)">
+      <div class="area-card-bg"></div>
+      <div class="area-card-inner">
+        <div class="area-type">Value + lifestyle</div>
+        <h3>Rawai / Nai Harn</h3>
+        <div class="area-stats">
+          <span>Yield: <strong>5–7%</strong></span>
+          <span>Growth: <strong>6–8%</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="area-card reveal" style="background:linear-gradient(180deg,#3b5a4a,#1a352a)">
+      <div class="area-card-bg"></div>
+      <div class="area-card-inner">
+        <div class="area-type">Exclusive enclave</div>
+        <h3>Surin</h3>
+        <div class="area-stats">
+          <span>Yield: <strong>7–9%</strong></span>
+          <span>Growth: <strong>10–12%</strong></span>
+        </div>
+      </div>
+    </div>
+    <div class="area-card reveal" style="background:linear-gradient(180deg,#4a4a5b,#2a2a35)">
+      <div class="area-card-bg"></div>
+      <div class="area-card-inner">
+        <div class="area-type">Growth corridor</div>
+        <h3>Mai Khao / Thalang</h3>
+        <div class="area-stats">
+          <span>Yield: <strong>5–6%</strong></span>
+          <span>Growth: <strong>8–10%</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<div class="divider"></div>
+<section class="section" id="process">
+  <div class="section-tag reveal">How it works</div>
+  <h2 class="section-title reveal">From inquiry to<br>keys in hand.</h2>
+  <p class="section-sub reveal">We handle the complexity. You make the decisions.</p>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="process-icon">01</div>
+      <h3>Tell us what you want</h3>
+      <p>Fill out the form or message us on WhatsApp. Share your budget, timeline, and property preferences.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-icon">02</div>
+      <h3>Get matched</h3>
+      <p>A specialist reviews your criteria and curates a shortlist of properties that fit your goals.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-icon">03</div>
+      <h3>Consult & view</h3>
+      <p>Schedule a call or visit. Tour properties virtually or in person with your dedicated agent.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="process-icon">04</div>
+      <h3>Close with confidence</h3>
+      <p>Full legal support, ownership structure guidance, and property management setup included.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="divider"></div>
+<section class="section">
+  <div class="section-tag reveal">What buyers say</div>
+  <h2 class="section-title reveal">Trusted by international<br>investors.</h2>
+  <div class="testimonials-grid" style="margin-top:2.5rem">
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote">The team understood exactly what I was looking for. Within two weeks of my first inquiry, I had toured five properties and made an offer on a Bang Tao villa. The process was seamless.</div>
+      <div class="testimonial-author">M.K. — Berlin, Germany</div>
+      <div class="testimonial-detail">Purchased villa, Bang Tao | 28M THB</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote">As a first-time overseas buyer, I had many concerns about legal structures. They walked me through every option and connected me with excellent local lawyers. I now own a condo generating 7.2% yield.</div>
+      <div class="testimonial-author">A.S. — Singapore</div>
+      <div class="testimonial-detail">Purchased condo, Cherng Talay | 12M THB</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote">I was looking for a retirement property with rental potential. They found me a place in Rawai that perfectly balances lifestyle and returns. Communication was excellent throughout.</div>
+      <div class="testimonial-author">J.P. — London, UK</div>
+      <div class="testimonial-detail">Purchased villa, Rawai | 18M THB</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="testimonial-quote">Professional from start to finish. The market knowledge was impressive, and they were honest about which areas offer real value versus overhyped developments. Exactly the guidance I needed.</div>
+      <div class="testimonial-author">D.V. — Moscow, Russia</div>
+      <div class="testimonial-detail">Purchased 2 condos, Kamala | 22M THB</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<div class="divider"></div>
+<section class="section" id="faq">
+  <div class="section-tag reveal">Frequently asked</div>
+  <h2 class="section-title reveal">Common questions<br>from buyers.</h2>
+  <div class="faq-list" style="margin-top:2rem">
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Can foreigners own property in Phuket?</div>
+      <div class="faq-a"><p>Yes. Foreigners can own freehold condominium units outright (up to 49% of a building's total area). For villas and land, established structures include 30-year renewable leaseholds and Thai company structures. We connect you with experienced property lawyers to set up the right ownership model.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">What are typical rental yields in Phuket?</div>
+      <div class="faq-a"><p>Well-located, professionally managed properties typically deliver 5–8% net annual rental yield. Premium villas in Bang Tao and Surin can exceed 8% during peak season. Returns depend on location, management quality, and pricing strategy.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Do I need to visit Phuket to buy?</div>
+      <div class="faq-a"><p>Not necessarily. Many international buyers complete purchases remotely using virtual property tours, video consultations, and power of attorney arrangements. However, we always recommend visiting if your schedule permits — nothing replaces seeing a property in person.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">What is the buying process timeline?</div>
+      <div class="faq-a"><p>From initial inquiry to completed purchase typically takes 4–8 weeks. This includes property selection (1–2 weeks), due diligence and legal review (1–2 weeks), and transfer completion (2–4 weeks). Off-plan purchases may have different timelines based on construction schedules.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">Are there financing options for foreign buyers?</div>
+      <div class="faq-a"><p>Most foreign purchases in Phuket are cash transactions, as Thai banks generally do not offer mortgages to non-residents. Some developers offer installment plans during construction. A few international banks may provide financing against assets in your home country.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q" onclick="toggleFaq(this)">What ongoing costs should I expect?</div>
+      <div class="faq-a"><p>Typical ongoing costs include common area maintenance fees (condos), property management fees (if renting out), annual insurance, and minor local taxes. Total ongoing costs typically range from 1–3% of property value annually, depending on the type and management arrangement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-banner-bg"></div>
+  <div class="cta-banner-content reveal">
+    <h2>Ready to invest in Phuket?</h2>
+    <p>Get a free consultation with a property specialist. We'll match you with the right properties, walk you through ownership options, and help you make a confident decision.</p>
+    <a href="#form" class="cta-btn">Start Your Search</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">MINERVA</div>
+  <p>Phuket Property Advisory &bull; Connecting international buyers with premium real estate.</p>
+  <p style="margin-top:.5rem">&copy; 2026 Minerva. All rights reserved.</p>
+</footer>
+
+<!-- STICKY WHATSAPP -->
+<a href="https://wa.me/66XXXXXXXXX?text=Hi%2C%20I%27m%20interested%20in%20Phuket%20property" class="sticky-wa" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// UTM capture
+const params = new URLSearchParams(window.location.search);
+['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(p => {
+  const el = document.getElementById(p);
+  if (el && params.get(p)) el.value = params.get(p);
+});
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// FAQ toggle
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+
+// Form submit (placeholder — connect to GHL webhook)
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = Object.fromEntries(new FormData(form));
+  
+  fetch('https://services.leadconnectorhq.com/hooks/G8dDjRQuFjerRmdyaJiT/webhook-trigger/b51b3602-379f-4c52-ab20-14c0c58f37cb', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(err => console.error('Webhook error:', err));
+
+  // Fire Facebook Lead event
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', {
+      content_name: data.property_type,
+      content_category: data.budget,
+      value: 0,
+      currency: 'USD'
+    });
+  }
+
+  form.innerHTML = `
+    <div style="text-align:center;padding:2rem 0">
+      <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--c-gold);margin-bottom:.5rem">Thank you!</div>
+      <p style="color:var(--c-muted);font-size:.9rem">A Phuket property specialist will contact you within 24 hours.</p>
+    </div>
+  `;
+  
+  console.log('Lead data:', data);
+}
+</script>
+
+</body>
+</html>
