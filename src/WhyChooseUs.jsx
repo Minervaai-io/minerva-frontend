@@ -25,9 +25,10 @@ export default function WhyChooseUs() {
       {/* Hero */}
       <section className="bg-white border-y">
         <div className="max-w-5xl mx-auto px-6 py-16 text-center">
-          <h2 className="text-4xl font-extrabold">Why real-estate teams pick Minerva</h2>
+          <h2 className="text-4xl font-extrabold">Why Phuket agencies and developers pick Minerva</h2>
           <p className="mt-4 text-lg text-gray-600">
-            We combine sales-floor experience with robust AI ops. The result: faster speed-to-lead, more booked tours, and lower staffing costs.
+            We replace your marketing team, your media buyer, your lead qualifier, and your CRM admin — and you only pay
+            when a deal actually closes.
           </p>
         </div>
       </section>
@@ -35,77 +36,87 @@ export default function WhyChooseUs() {
       {/* Value pillars */}
       <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
         <div className="bg-white p-6 rounded-xl border shadow-sm">
-          <h4 className="font-semibold text-indigo-700">Built by RE operators</h4>
-          <p className="text-gray-600 mt-2">We’ve sat in the agent seat. Our playbooks reflect real pipelines, not lab demos.</p>
+          <h4 className="font-semibold text-indigo-700">Aligned incentives</h4>
+          <p className="text-gray-600 mt-2">30% commission on closed deals only. No retainer, no media spend on you. We win when you win.</p>
         </div>
         <div className="bg-white p-6 rounded-xl border shadow-sm">
-          <h4 className="font-semibold text-indigo-700">Speed-to-lead in seconds</h4>
-          <p className="text-gray-600 mt-2">Instant callbacks on ad forms + 24/7 inbound coverage across channels.</p>
+          <h4 className="font-semibold text-indigo-700">Phuket-focused</h4>
+          <p className="text-gray-600 mt-2">One market, multiple buyer nationalities — Russian, European, Chinese, Middle Eastern. Localized ad creative and multilingual qualification.</p>
         </div>
         <div className="bg-white p-6 rounded-xl border shadow-sm">
-          <h4 className="font-semibold text-indigo-700">Bookings, not busywork</h4>
-          <p className="text-gray-600 mt-2">We optimize for viewings scheduled and show-ups—your real bottom line.</p>
+          <h4 className="font-semibold text-indigo-700">Full stack, hands-off</h4>
+          <p className="text-gray-600 mt-2">Ads, AI qualification, nurture, CRM, viewing-booking — we run it all. You walk into pre-qualified meetings.</p>
         </div>
       </section>
 
       {/* Comparison */}
       <section className="bg-white border-y">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <h3 className="text-2xl font-semibold mb-6">Minerva vs. hiring more phone staff</h3>
+          <h3 className="text-2xl font-semibold mb-6">Minerva vs. building your own acquisition team</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm border rounded-xl overflow-hidden">
               <thead className="bg-gray-100">
                 <tr>
                   <th className="p-4">Criteria</th>
-                  <th className="p-4">Minerva Agents</th>
-                  <th className="p-4">Traditional Staffing</th>
+                  <th className="p-4">Minerva Partnership</th>
+                  <th className="p-4">In-house team</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t">
-                  <td className="p-4 font-medium">Response time</td>
-                  <td className="p-4">Seconds (instant on submit)</td>
-                  <td className="p-4">Minutes–hours; off-hours missed</td>
+                  <td className="p-4 font-medium">Up-front cost</td>
+                  <td className="p-4">Zero. We cover ad spend and ops.</td>
+                  <td className="p-4">Salaries + media budget + tools</td>
                 </tr>
                 <tr className="border-t">
-                  <td className="p-4 font-medium">Coverage</td>
-                  <td className="p-4">24/7 multi-language</td>
-                  <td className="p-4">Business hours + staffing gaps</td>
+                  <td className="p-4 font-medium">Risk to you</td>
+                  <td className="p-4">None. Pay only on closed deals.</td>
+                  <td className="p-4">High. Monthly burn whether you close or not.</td>
                 </tr>
                 <tr className="border-t">
-                  <td className="p-4 font-medium">Scalability</td>
-                  <td className="p-4">Elastic with ad volume</td>
-                  <td className="p-4">Linear headcount cost</td>
+                  <td className="p-4 font-medium">Speed to qualified meeting</td>
+                  <td className="p-4">Under 60 seconds, 24/7, multilingual</td>
+                  <td className="p-4">Hours; gaps after hours and weekends</td>
                 </tr>
                 <tr className="border-t">
-                  <td className="p-4 font-medium">Consistency</td>
-                  <td className="p-4">Scripted, QA’d, logged</td>
-                  <td className="p-4">Varies by agent and shift</td>
+                  <td className="p-4 font-medium">Buyer-language coverage</td>
+                  <td className="p-4">Russian, English, Chinese, Arabic, more</td>
+                  <td className="p-4">Usually English only</td>
                 </tr>
                 <tr className="border-t">
-                  <td className="p-4 font-medium">Total cost</td>
-                  <td className="p-4">Predictable SaaS + usage</td>
-                  <td className="p-4">Salaries + training + turnover</td>
+                  <td className="p-4 font-medium">Compensation model</td>
+                  <td className="p-4">30% of commission on closed deals only</td>
+                  <td className="p-4">Fixed salaries + ad budget + commission</td>
                 </tr>
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-500 mt-3">* Example comparison; exact ROI depends on traffic and conversion baselines.</p>
+          <p className="text-xs text-gray-500 mt-3">Comparison reflects the typical small-to-mid agency / developer stack in Phuket.</p>
         </div>
       </section>
 
-      {/* Social proof / quotes */}
-      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
-        {[
-          { q: "We finally stopped missing hot ad leads after hours.", a: "Sales Lead, Property Developer" },
-          { q: "Bookings increased without hiring. The pipeline is steadier.", a: "Director, Real-Estate Agency" },
-          { q: "Integration was fast—calendars, forms, CRM all in sync.", a: "Ops Manager, Leasing Team" },
-        ].map((t, i) => (
-          <div key={i} className="bg-white p-6 rounded-xl border shadow-sm">
-            <p className="text-gray-800">“{t.q}”</p>
-            <p className="text-xs text-gray-500 mt-3">{t.a}</p>
+      {/* Founding partners CTA (replaces fake testimonials) */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="bg-white p-8 md:p-12 rounded-2xl border shadow-sm text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Founding partners wanted.</h3>
+          <p className="mt-3 text-gray-700 max-w-2xl mx-auto">
+            We are taking a small number of Phuket agencies and developers at preferred commission terms,
+            in exchange for being our first publicly named case studies. Closers welcome. Open inventory required.
+          </p>
+          <ul className="mt-6 inline-block text-left text-gray-700 space-y-2">
+            <li>• Reserved commission rate for founding partners</li>
+            <li>• Direct access to the founder during onboarding</li>
+            <li>• Full transparency: live dashboard of leads, qualifications, viewings, deals</li>
+          </ul>
+          <div className="mt-7">
+            <a
+              href="/contact"
+              className="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700"
+            >
+              Apply for a partner slot
+            </a>
           </div>
-        ))}
+        </div>
       </section>
 
       {/* CTA */}

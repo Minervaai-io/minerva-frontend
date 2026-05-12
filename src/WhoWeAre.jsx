@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function WhoWeAre() {
+  const [photoFailed, setPhotoFailed] = useState(false);
   return (
     <div className="min-h-screen bg-gray-50 text-gray-900">
       {/* Header */}
@@ -8,8 +9,8 @@ export default function WhoWeAre() {
         <a href="/" className="flex items-center gap-3">
           <img src="/minerva-logo.png" alt="Minerva" className="w-14 h-14 rounded-full" />
           <div>
-            <h1 className="text-xl font-bold">Minerva — AI Agents for Real Estate</h1>
-            <p className="text-sm text-gray-500">From real estate, for real estate.</p>
+            <h1 className="text-xl font-bold">Minerva — Phuket Real Estate Lead Engine</h1>
+            <p className="text-sm text-gray-500">Built in Phuket. Paid only when you close.</p>
           </div>
         </a>
         <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -25,142 +26,110 @@ export default function WhoWeAre() {
       {/* Hero */}
       <section className="bg-white border-y">
         <div className="max-w-5xl mx-auto px-6 py-16 text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight">We build AI that thinks like agents.</h2>
+          <h2 className="text-4xl font-extrabold tracking-tight">I built Minerva so Phuket developers stop losing buyers.</h2>
           <p className="mt-4 text-lg text-gray-600">
-            Minerva was founded by real-estate operators who’ve sat in the sales seat. 
-            We turn ads into booked viewings—instantly, 24/7—so your team closes more deals.
+            One founder. One market. One promise: if we don't close deals for you, neither of us makes money.
           </p>
         </div>
       </section>
 
-      {/* Founder Video (replace src later) */}
+      {/* Founder bio block (replaces former video placeholder) */}
       <section className="max-w-4xl mx-auto px-6 py-12">
-        <h3 className="text-2xl font-semibold">A quick hello from us</h3>
-        <p className="text-gray-600 mt-2">Drop your intro video here to build trust in 60 seconds.</p>
-
-        {/* Responsive 16:9 container */}
-        <div className="mt-5 relative w-full overflow-hidden rounded-xl shadow-lg bg-black" style={{paddingTop: "56.25%"}}>
-          {/* Replace the iframe src with your YouTube/Vimeo or self-hosted link */}
-          <iframe
-            title="Who We Are Video"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="absolute inset-0 w-full h-full border-0"
-          />
+        <div className="bg-white border rounded-2xl shadow-sm p-8 md:p-10">
+          <div className="flex items-center gap-4 mb-6">
+            {!photoFailed ? (
+              <img
+                src="/tarek.jpg"
+                alt="Tarek Sankari"
+                className="w-16 h-16 rounded-full object-cover border-2 border-indigo-100"
+                onError={() => setPhotoFailed(true)}
+              />
+            ) : (
+              <div className="w-16 h-16 rounded-full bg-indigo-600 text-white flex items-center justify-center text-2xl font-bold">
+                T
+              </div>
+            )}
+            <div>
+              <h3 className="text-2xl font-semibold">Tarek Sankari</h3>
+              <p className="text-sm text-gray-500">Founder, Minerva — based in Phuket</p>
+            </div>
+          </div>
+          <p className="text-gray-700 leading-relaxed">
+            I'm Tarek. After years running paid acquisition for property developers, I watched the same pattern over and over:
+            qualified foreign buyers would fill out a form, and then go cold because nobody called them back in time —
+            sometimes for hours, sometimes for days. Most of those buyers ended up closing somewhere else.
+          </p>
+          <p className="mt-4 text-gray-700 leading-relaxed">
+            So I moved to Phuket and built the stack I wished my clients had: Meta and Google ads, multilingual AI qualification,
+            WhatsApp and voice nurture, a CRM that actually fires, and warm handoffs straight to the closer's calendar.
+            And I run it as a partnership — Minerva pays the ad spend, takes 30% of the commission on closed deals, and earns
+            nothing otherwise.
+          </p>
+          <p className="mt-4 text-gray-700 leading-relaxed">
+            If you're a Phuket agency or developer with closers but no consistent inbound, that's what I'm here for.
+          </p>
         </div>
-
-        {/* If you prefer a local file later:
-            <video controls className="mt-5 w-full rounded-xl shadow-lg">
-              <source src="/founder-intro.mp4" type="video/mp4" />
-            </video>
-        */}
       </section>
 
-      {/* Our Story */}
-      <section className="bg-white">
+      {/* What Minerva replaces */}
+      <section className="bg-white border-y">
         <div className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-semibold">Our story</h3>
+            <h3 className="text-2xl font-semibold">What we replace</h3>
             <p className="mt-3 text-gray-700 leading-relaxed">
-              We started Minerva after running performance marketing for property developers and agencies across multiple markets.
-              One pattern kept repeating: <span className="font-medium">leads go cold fast.</span> 
-              Sales teams juggle showings, WhatsApp, and inbound calls—so responding in minutes, not hours, is hard.
+              Most agencies and developers in Phuket cobble together a marketing person, an outsourced media buyer,
+              an admin who manages the CRM, and a junior who chases follow-ups. That stack is expensive, slow, and
+              loses leads after hours and on weekends — exactly when international buyers in different time zones are browsing.
             </p>
             <p className="mt-3 text-gray-700 leading-relaxed">
-              Minerva agents (Mark, Sarah, David) were built to plug that leak: instant callbacks from ad forms, 
-              smart inbound call handling, and consistent nurturing. The result? 
-              More qualified conversations and more booked tours—without growing headcount.
+              Minerva replaces all of it. You keep your closers. We bring the qualified, viewing-ready meetings.
             </p>
           </div>
           <div className="bg-indigo-50 border border-indigo-100 rounded-2xl p-6">
-            <h4 className="text-lg font-semibold text-indigo-700">What we optimize for</h4>
+            <h4 className="text-lg font-semibold text-indigo-700">The full stack we run for you</h4>
             <ul className="mt-4 space-y-3 text-gray-700">
-              <li>• <strong>Speed-to-lead:</strong> instant calls within seconds of form submit</li>
-              <li>• <strong>Quality:</strong> context-aware conversations, CRM-ready notes</li>
-              <li>• <strong>Showings booked:</strong> virtual/physical tours on agents’ calendars</li>
-              <li>• <strong>Coverage:</strong> 24/7 availability, multi-language options</li>
-              <li>• <strong>Cost:</strong> scale conversations without scaling payroll</li>
+              <li>• <strong>Paid acquisition:</strong> Meta + Google ads targeting buyers in Russia, Europe, China, MENA</li>
+              <li>• <strong>AI qualification:</strong> voice + WhatsApp, multilingual, 24/7, in under 60 seconds</li>
+              <li>• <strong>Nurture sequences:</strong> WhatsApp, SMS, email, AI voice — until they're ready to view</li>
+              <li>• <strong>CRM:</strong> we own the pipeline; you see the dashboard</li>
+              <li>• <strong>Viewing booking:</strong> straight into your closer's calendar</li>
+              <li>• <strong>Compensation:</strong> 30% on closed deals only. Nothing if we don't deliver.</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* Trust / Proof */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-xl border bg-white shadow-sm">
-            <div className="text-3xl font-extrabold text-indigo-700">24/7</div>
-            <div className="text-gray-600 mt-1">Instant lead response</div>
-          </div>
-          <div className="p-6 rounded-xl border bg-white shadow-sm">
-            <div className="text-3xl font-extrabold text-indigo-700">+70%</div>
-            <div className="text-gray-600 mt-1">Higher conversion when contacted in minutes</div>
-          </div>
-          <div className="p-6 rounded-xl border bg-white shadow-sm">
-            <div className="text-3xl font-extrabold text-indigo-700">Zero</div>
-            <div className="text-gray-600 mt-1">Missed inbound calls after hours</div>
-          </div>
-        </div>
-        <p className="text-xs text-gray-500 mt-3">
-          * Industry research shows responding within minutes can boost conversions substantially. Your mileage may vary by market, offer, and media mix.
-        </p>
-      </section>
-
       {/* Values */}
       <section className="bg-white border-y">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <h3 className="text-2xl font-semibold mb-6">Our values</h3>
+          <h3 className="text-2xl font-semibold mb-6">How we work</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl border shadow-sm">
-              <h4 className="font-semibold">Clarity</h4>
-              <p className="text-gray-600 mt-2">Easy to test, easy to buy, easy to scale.</p>
+              <h4 className="font-semibold">Aligned incentives</h4>
+              <p className="text-gray-600 mt-2">We make money only when you make money. Period.</p>
             </div>
             <div className="p-6 rounded-xl border shadow-sm">
-              <h4 className="font-semibold">Reliability</h4>
-              <p className="text-gray-600 mt-2">Consistent performance across campaigns and seasons.</p>
+              <h4 className="font-semibold">One market</h4>
+              <p className="text-gray-600 mt-2">Phuket only. No Bangkok, no Bali, no global. Local focus, local knowledge.</p>
             </div>
             <div className="p-6 rounded-xl border shadow-sm">
-              <h4 className="font-semibold">Partnership</h4>
-              <p className="text-gray-600 mt-2">We come from real estate—we speak your language.</p>
+              <h4 className="font-semibold">Hands-off for you</h4>
+              <p className="text-gray-600 mt-2">We run the entire stack. You walk into pre-qualified viewings.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Agents recap / deep links */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <h3 className="text-2xl font-semibold text-center">Meet your AI team</h3>
-        <p className="text-gray-600 text-center mt-2 mb-8">Each agent owns a stage of the pipeline.</p>
-        <div className="grid md:grid-cols-3 gap-6">
-          <a href="/agents/mark" className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition">
-            <img src="/mark-photo.jpg" alt="Mark" className="w-full h-56 object-cover rounded-lg" />
-            <h4 className="mt-4 font-semibold group-hover:text-indigo-700">Mark — Outreach</h4>
-            <p className="text-sm text-gray-600">Instant lead callbacks & booking.</p>
-          </a>
-          <a href="/agents/sarah" className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition">
-            <img src="/sarah.jpg" alt="Sarah" className="w-full h-56 object-cover rounded-lg" />
-            <h4 className="mt-4 font-semibold group-hover:text-indigo-700">Sarah — Inbound</h4>
-            <p className="text-sm text-gray-600">Answers website/Instagram calls.</p>
-          </a>
-          <a href="/agents/david" className="group bg-white p-6 rounded-xl border shadow-sm hover:shadow-md transition">
-            <img src="/david-photo.jpg" alt="David" className="w-full h-56 object-cover rounded-lg" />
-            <h4 className="mt-4 font-semibold group-hover:text-indigo-700">David — Nurture</h4>
-            <p className="text-sm text-gray-600">Re-engages & books viewings.</p>
-          </a>
         </div>
       </section>
 
       {/* CTA */}
       <section className="bg-indigo-700">
         <div className="max-w-6xl mx-auto px-6 py-16 text-center text-white">
-          <h3 className="text-3xl font-bold">Ready to see it with your listings?</h3>
-          <p className="mt-2 text-indigo-100">We’ll plug into your current ads & calendar—no internal dev time needed.</p>
+          <h3 className="text-3xl font-bold">Looking for founding partners.</h3>
+          <p className="mt-2 text-indigo-100">A small number of Phuket agencies and developers, at preferred commission terms.</p>
           <a
             href="/contact"
             className="inline-block mt-6 px-6 py-3 bg-white text-indigo-700 font-semibold rounded-lg hover:bg-indigo-50"
           >
-            Book a strategy call
+            Apply for a partner slot
           </a>
         </div>
       </section>
@@ -169,7 +138,7 @@ export default function WhoWeAre() {
       <footer className="bg-white border-t">
         <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-gray-600 grid md:grid-cols-4 gap-8">
           <div>
-            <strong className="block text-gray-900">Minerva — AI Agents for Real Estate</strong>
+            <strong className="block text-gray-900">Minerva — Phuket Real Estate Lead Engine</strong>
             <div className="mt-2">© {new Date().getFullYear()}</div>
           </div>
           <div>

@@ -65,10 +65,44 @@ export default function PricingSection() {
   return (
     <section className="bg-white border-y">
       <div className="max-w-6xl mx-auto px-6 py-16">
+
+        {/* Partnership primary offer */}
+        <div className="rounded-2xl border-2 border-indigo-600 bg-indigo-50 p-8 md:p-10 mb-10">
+          <div className="flex items-start justify-between flex-wrap gap-4">
+            <div className="max-w-2xl">
+              <span className="inline-block text-xs font-semibold px-2 py-1 rounded-full bg-indigo-600 text-white mb-3">
+                Recommended — Performance partnership
+              </span>
+              <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900">
+                The Phuket Lead Engine — 30% on Closed Deals.
+              </h3>
+              <p className="mt-3 text-gray-700 leading-relaxed">
+                We run the entire stack — ads, AI qualification, nurture, CRM, viewing-booking — and we cover the media spend.
+                You pay nothing until a villa or condo closes. <strong>30% of the commission on closed deals only.</strong>
+                A small number of founding-partner slots are open at preferred rates.
+              </p>
+              <ul className="mt-5 space-y-2 text-sm text-gray-700">
+                <li>• Zero retainer · Zero ad-spend cost to you · Zero risk if we don't deliver</li>
+                <li>• 24/7 multilingual qualification (Russian, English, Chinese, Arabic, more)</li>
+                <li>• Live dashboard: leads, viewings, deals, pipeline value</li>
+                <li>• Direct access to the founder during onboarding</li>
+              </ul>
+            </div>
+            <div>
+              <a
+                href="/contact"
+                className="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow"
+              >
+                Apply for a partner slot
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div className="flex items-end justify-between flex-wrap gap-4">
-          <h3 className="text-2xl font-semibold text-gray-900">Pricing</h3>
+          <h3 className="text-2xl font-semibold text-gray-900">Or: fixed-fee AI agent packages</h3>
           <p className="text-sm text-gray-500">
-            Transparent options for 1–4+ agents. Contact us for add-ons and volume.
+            For teams that only want the AI agent layer — without the full partnership.
           </p>
         </div>
 

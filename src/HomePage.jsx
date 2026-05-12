@@ -6,6 +6,7 @@ import Integrations from "./Integrations";
 import ThreeStepOnboarding from "./ThreeStepOnboarding";
 import PricingSection from "./PricingSection";
 import ComparisonTable from "./ComparisonTable";
+import ROICalculator from "./ROICalculator";
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -45,9 +46,8 @@ export default function HomePage() {
 return (
   <>
     <Helmet>
-      <title>Minerva AI — AI Agents for Real Estate | Never Miss a Lead</title>
-      <meta name="description" content="Minerva AI gives real estate brokerages 24/7 AI agents that instantly call back leads, handle inbound enquiries and follow up 
-automatically. Book a free demo today." />
+      <title>Phuket Real Estate Lead Engine — You Pay 30% Only on Closed Deals | Minerva AI</title>
+      <meta name="description" content="Minerva runs the entire commercial stack for Phuket real estate agencies and developers: paid ads, AI lead qualification, multilingual nurture, CRM, and booked viewings. You pay 30% commission only when a deal closes. No retainer." />
     </Helmet>
     <div className="min-h-screen bg-gray-50 text-gray-900">      {/* HEADER */}
       <header className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between relative">
@@ -160,17 +160,62 @@ automatically. Book a free demo today." />
       {/* ===== HERO / INTRO (moved below carousel) ===== */}
       <section className="bg-white py-16 border-y">
         <div className="max-w-4xl mx-auto text-center px-6">
-          <h2 className="text-4xl font-bold text-gray-900">Close More Leads, Faster</h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Minerva is the AI agency solution built for real estate. We come from a real estate background ourselves,
-            so we know what matters when it comes to closing deals. Our AI helps property developers and agencies
-            <strong> capture leads instantly</strong>, <strong>engage them in real time</strong>, and
-            <strong> book showings effortlessly</strong>.
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+            Your entire Phuket sales engine — for 30% of what you close.
+          </h2>
+          <p className="mt-5 text-lg text-gray-700 leading-relaxed">
+            Stop hiring marketing, qualifiers, and follow-up staff. Minerva runs paid acquisition, AI lead qualification,
+            multilingual nurture, CRM, and viewing-booking for real estate agencies and developers in Phuket.
+            You pay <strong>0% until a deal closes</strong>. <strong>30% of commission on closed deals only.</strong> No retainer. No media spend on you.
           </p>
           <p className="mt-3 text-md text-gray-500">
-            Statistics show that contacting a lead within the first 5 minutes increases conversion rates by up to 70%.
-            Minerva makes that possible — 24/7.
+            International buyers from Russia, Europe, China, and the Middle East — qualified in their language, 24/7,
+            before they ever hit your team's calendar.
           </p>
+          <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <a href="/contact" className="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow-sm">
+              Apply for a partner slot
+            </a>
+            <a href="#agents" className="inline-block px-6 py-3 border border-gray-300 font-semibold rounded-lg hover:bg-gray-50">
+              See how the pipeline works
+            </a>
+          </div>
+          <p className="mt-4 text-xs text-gray-400">
+            Pay-on-results partnership. We cover the ad spend. You only pay when a villa or condo closes.
+          </p>
+        </div>
+      </section>
+
+      {/* ===== Built for Phuket ===== */}
+      <section className="bg-gray-50 py-16">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900">Built for Phuket.</h3>
+            <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
+              We don't do Bangkok. We don't do Bali. We don't do Dubai. We obsess over one market: Phuket buyer demand from abroad.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-6 rounded-xl border shadow-sm">
+              <h4 className="font-semibold text-indigo-700 text-lg">Where your buyers come from</h4>
+              <ul className="mt-4 space-y-3 text-gray-700">
+                <li>• <strong>Russia &amp; CIS</strong> — leading buyer cohort for Phuket condos and villas, mostly cash</li>
+                <li>• <strong>China &amp; Hong Kong</strong> — HNW investors, long-stay residency interest</li>
+                <li>• <strong>Europe</strong> — UK, Germany, France, Switzerland; lifestyle + investment</li>
+                <li>• <strong>Middle East</strong> — Gulf HNW, premium villa segment</li>
+              </ul>
+            </div>
+            <div className="bg-white p-6 rounded-xl border shadow-sm">
+              <h4 className="font-semibold text-indigo-700 text-lg">How we localize</h4>
+              <ul className="mt-4 space-y-3 text-gray-700">
+                <li>• <strong>Multilingual AI qualification</strong> — Russian, English, Chinese, Arabic, French — by voice and WhatsApp</li>
+                <li>• <strong>Native-language ad creative</strong> — AI-generated video, fresh weekly, per market</li>
+                <li>• <strong>Buyer questions we pre-screen</strong> — visa status, Thai company structures, BOI residency, financing</li>
+                <li>• <strong>Channel-aware</strong> — works alongside any portal traffic (Juwai, Prian, Tranio) you already pay for</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -178,6 +223,7 @@ automatically. Book a free demo today." />
       <IntegrationsBar />
       <ThreeStepOnboarding />
       <ComparisonTable />
+      <ROICalculator />
       <PricingSection />
 
       {/* FOOTER */}
