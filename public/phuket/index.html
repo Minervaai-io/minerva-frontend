@@ -568,29 +568,52 @@ function toggleFaq(el) {
   el.parentElement.classList.toggle('open');
 }
 
-// Form submit (placeholder — connect to GHL webhook)
+// ── CAPI helpers ────────────────────────────────────────────────────────────
+function getCookie(name) {
+  const m = document.cookie.match(new RegExp('(?:^| )' + name + '=([^;]+)'));
+  return m ? decodeURIComponent(m[1]) : '';
+}
+
+function genEventId() {
+  if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+  return 'mv_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+}
+
+// Form submit — wires browser pixel + server-side CAPI deduplication
 function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const data = Object.fromEntries(new FormData(form));
-  
+
+  // Shared dedup ID: same value goes to browser pixel and to server CAPI
+  const event_id = genEventId();
+
+  // Enrich payload for the CAPI bridge (GHL → Netlify Function → Meta)
+  data.event_id = event_id;
+  data.event_time = Math.floor(Date.now() / 1000);
+  data.event_source_url = window.location.href;
+  data.user_agent = navigator.userAgent;
+  data.fbp = getCookie('_fbp');
+  data.fbc = getCookie('_fbc');
+
+  // GHL workflow trigger — fires Retell call + CAPI bridge
   fetch('https://services.leadconnectorhq.com/hooks/G8dDjRQuFjerRmdyaJiT/webhook-trigger/b51b3602-379f-4c52-ab20-14c0c58f37cb', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
   }).catch(err => console.error('Webhook error:', err));
 
-  // Fire Facebook Lead event
+  // Browser pixel — eventID lets server CAPI dedup against this
   if (typeof fbq !== 'undefined') {
     fbq('track', 'Lead', {
       content_name: data.property_type,
       content_category: data.budget,
       value: 0,
       currency: 'USD'
-    });
+    }, { eventID: event_id });
   }
 
-  // Fire Google Ads conversion event
+  // Google Ads conversion
   if (typeof gtag !== 'undefined') {
     gtag('event', 'conversion', {
       'send_to': 'AW-18043408912/7nrNCI3BnJQcEJCk4ptD'
@@ -603,7 +626,7 @@ function handleSubmit(e) {
       <p style="color:var(--c-muted);font-size:.9rem">A Phuket property specialist will contact you within 24 hours.</p>
     </div>
   `;
-  
+
   console.log('Lead data:', data);
 }
 </script>
