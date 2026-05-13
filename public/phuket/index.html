@@ -66,7 +66,7 @@ a{color:inherit;text-decoration:none}
 
 /* ──── HERO ──── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding:8rem 2rem 4rem}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0a1628 0%,#122240 30%,#1a3055 60%,#0f1d35 100%);z-index:0}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,22,40,.55) 0%,rgba(10,22,40,.78) 50%,rgba(10,22,40,.92) 100%),url('hero-phuket.jpg') center/cover no-repeat;z-index:0}
 .hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(201,165,92,.06) 0%,transparent 60%)}
 .hero-pattern{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(0deg,transparent,transparent 100px,rgba(201,165,92,.3) 100px,rgba(201,165,92,.3) 101px),repeating-linear-gradient(90deg,transparent,transparent 100px,rgba(201,165,92,.3) 100px,rgba(201,165,92,.3) 101px)}
 .hero-content{position:relative;z-index:2;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:4rem;align-items:center}
@@ -136,12 +136,14 @@ a{color:inherit;text-decoration:none}
 .process-step h3{font-size:.9rem;font-weight:600;color:var(--c-cream);margin-bottom:.4rem}
 .process-step p{font-size:.8rem;color:var(--c-muted);line-height:1.5}
 
-/* ──── TESTIMONIALS ──── */
-.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-.testimonial-card{background:rgba(255,255,255,.02);border:1px solid var(--c-divider);border-radius:4px;padding:2rem}
-.testimonial-quote{font-family:var(--font-display);font-size:1rem;font-style:italic;color:var(--c-cream);line-height:1.7;margin-bottom:1.5rem;position:relative;padding-left:1.5rem;border-left:2px solid var(--c-gold)}
-.testimonial-author{font-size:.8rem;font-weight:600;color:var(--c-gold)}
-.testimonial-detail{font-size:.75rem;color:var(--c-muted);margin-top:.2rem}
+/* ──── MEET FOUNDER ──── */
+.meet-founder{display:grid;grid-template-columns:minmax(280px,420px) 1fr;gap:3.5rem;align-items:center;max-width:1100px;margin:0 auto}
+.meet-founder-photo{position:relative;border-radius:4px;overflow:hidden;border:1px solid var(--c-divider);background:rgba(255,255,255,.02)}
+.meet-founder-photo::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--c-gold),var(--c-gold-light),var(--c-gold));z-index:2}
+.meet-founder-photo img{width:100%;height:auto;display:block;aspect-ratio:1/1;object-fit:cover}
+.meet-founder-content h2 em{font-style:italic;color:var(--c-gold)}
+.meet-founder-content p{font-size:1rem;line-height:1.75;color:var(--c-cream);margin-bottom:1.75rem;opacity:.9}
+.meet-founder-content .cta-btn{padding:.9rem 2rem;font-size:.8rem}
 
 /* ──── FAQ ──── */
 .faq-list{max-width:800px}
@@ -195,7 +197,8 @@ a{color:inherit;text-decoration:none}
 .why-grid,.areas-grid{grid-template-columns:1fr}
 .process-steps{grid-template-columns:1fr 1fr;gap:1.5rem}
 .process-steps::before{display:none}
-.testimonials-grid{grid-template-columns:1fr}
+.meet-founder{grid-template-columns:1fr;gap:2rem;text-align:center}
+.meet-founder-photo{max-width:280px;margin:0 auto}
 .form-row{grid-template-columns:1fr}
 /* Show the mobile sticky CTA bar and lift the WhatsApp button above it so they don't overlap */
 .sticky-cta-mobile{display:block}
@@ -454,31 +457,18 @@ body{padding-bottom:5rem}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- MEET THE FOUNDER -->
 <div class="divider"></div>
 <section class="section">
-  <div class="section-tag reveal">What buyers say</div>
-  <h2 class="section-title reveal">Trusted by international<br>investors.</h2>
-  <div class="testimonials-grid" style="margin-top:2.5rem">
-    <div class="testimonial-card reveal">
-      <div class="testimonial-quote">The team understood exactly what I was looking for. Within two weeks of my first inquiry, I had toured five properties and made an offer on a Bang Tao villa. The process was seamless.</div>
-      <div class="testimonial-author">M.K. — Berlin, Germany</div>
-      <div class="testimonial-detail">Purchased villa, Bang Tao | 28M THB</div>
+  <div class="meet-founder">
+    <div class="meet-founder-photo reveal">
+      <img src="tarek-photo.jpg" alt="Tarek, founder of Minerva" loading="lazy">
     </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-quote">As a first-time overseas buyer, I had many concerns about legal structures. They walked me through every option and connected me with excellent local lawyers. I now own a condo generating 7.2% yield.</div>
-      <div class="testimonial-author">A.S. — Singapore</div>
-      <div class="testimonial-detail">Purchased condo, Cherng Talay | 12M THB</div>
-    </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-quote">I was looking for a retirement property with rental potential. They found me a place in Rawai that perfectly balances lifestyle and returns. Communication was excellent throughout.</div>
-      <div class="testimonial-author">J.P. — London, UK</div>
-      <div class="testimonial-detail">Purchased villa, Rawai | 18M THB</div>
-    </div>
-    <div class="testimonial-card reveal">
-      <div class="testimonial-quote">Professional from start to finish. The market knowledge was impressive, and they were honest about which areas offer real value versus overhyped developments. Exactly the guidance I needed.</div>
-      <div class="testimonial-author">D.V. — Moscow, Russia</div>
-      <div class="testimonial-detail">Purchased 2 condos, Kamala | 22M THB</div>
+    <div class="meet-founder-content reveal">
+      <div class="section-tag" style="margin-bottom:1.25rem">Meet the founder</div>
+      <h2 class="section-title" style="margin-bottom:1.5rem">Built by a founder.<br><em>Not a sales team.</em></h2>
+      <p>I'm Tarek, founder of Minerva. When you book a strategy call, you're talking to me, not a junior. I'll walk through your situation honestly. Phuket has real opportunities and real traps. The 8% yields are not everywhere. The ownership structures depend on your country and tax position. If buying here isn't right for you, I'll tell you. Most international buyers I speak to walk in with a wrong-fit shortlist.</p>
+      <a href="#form" class="cta-btn">Book My Strategy Call</a>
     </div>
   </div>
 </section>
