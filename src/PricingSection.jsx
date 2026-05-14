@@ -5,7 +5,7 @@ const plans = [
   {
     name: "Single Agent",
     price: "$3,000",
-    blurb: "Perfect first step—prove ROI fast with one agent.",
+    blurb: "Perfect first step, prove ROI fast with one agent.",
     bullets: [
       "1 AI voice/chat agent (e.g., Mark)",
       "Lead capture + bookings",
@@ -71,15 +71,15 @@ export default function PricingSection() {
           <div className="flex items-start justify-between flex-wrap gap-4">
             <div className="max-w-2xl">
               <span className="inline-block text-xs font-semibold px-2 py-1 rounded-full bg-indigo-600 text-white mb-3">
-                Recommended — Performance partnership
+                Recommended · Performance partnership
               </span>
               <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900">
-                The Phuket Lead Engine — 30% on Closed Deals.
+                The Phuket Lead Engine. 20% for founding partners.
               </h3>
               <p className="mt-3 text-gray-700 leading-relaxed">
-                We run the entire stack — ads, AI qualification, nurture, CRM, viewing-booking — and we cover the media spend.
-                You pay nothing until a villa or condo closes. <strong>30% of the commission on closed deals only.</strong>
-                A small number of founding-partner slots are open at preferred rates.
+                We run the entire stack: ads, AI qualification, nurture, CRM, viewing-booking. We cover the media spend.
+                You pay nothing until a villa or condo closes. <strong>Founding partners lock 20% of commission on closed deals.</strong>
+                A small number of founding-partner slots are open right now.
               </p>
               <ul className="mt-5 space-y-2 text-sm text-gray-700">
                 <li>• Zero retainer · Zero ad-spend cost to you · Zero risk if we don't deliver</li>
@@ -87,13 +87,16 @@ export default function PricingSection() {
                 <li>• Live dashboard: leads, viewings, deals, pipeline value</li>
                 <li>• Direct access to the founder during onboarding</li>
               </ul>
+              <div className="mt-5 rounded-lg bg-white border border-indigo-100 p-4 text-sm text-gray-700">
+                <strong className="text-gray-900">How the rate works.</strong> Founding-partner rate of 20% locks for any deal booked during your 90-day launch window, even if it closes later. Standard rate steps to 25% in months 4 to 6 and 30% from month 7 onward.
+              </div>
             </div>
             <div>
               <a
                 href="/contact"
                 className="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow"
               >
-                Apply for a partner slot
+                Apply for a founding-partner slot
               </a>
             </div>
           </div>
@@ -102,7 +105,7 @@ export default function PricingSection() {
         <div className="flex items-end justify-between flex-wrap gap-4">
           <h3 className="text-2xl font-semibold text-gray-900">Or: fixed-fee AI agent packages</h3>
           <p className="text-sm text-gray-500">
-            For teams that only want the AI agent layer — without the full partnership.
+            For teams that only want the AI agent layer, without the full partnership.
           </p>
         </div>
 

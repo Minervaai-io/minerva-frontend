@@ -38,7 +38,7 @@ export default function FAQ() {
         <a href="/" className="flex items-center gap-3">
           <img src="/minerva-logo.png" alt="Minerva" className="w-14 h-14 rounded-full" />
           <div>
-            <h1 className="text-xl font-bold">Minerva — AI Agents for Real Estate</h1>
+            <h1 className="text-xl font-bold">Minerva · AI Agents for Real Estate</h1>
             <p className="text-sm text-gray-500">From real estate, for real estate.</p>
           </div>
         </a>
@@ -93,7 +93,7 @@ export default function FAQ() {
       <footer className="bg-white border-t">
         <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-gray-600 grid md:grid-cols-4 gap-8">
           <div>
-            <strong className="block text-gray-900">Minerva — AI Agents for Real Estate</strong>
+            <strong className="block text-gray-900">Minerva · AI Agents for Real Estate</strong>
             <div className="mt-2">© {new Date().getFullYear()}</div>
           </div>
           <div>

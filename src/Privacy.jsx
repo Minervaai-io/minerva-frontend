@@ -39,7 +39,7 @@ export default function Privacy() {
         <a href="/" className="flex items-center gap-3">
           <img src="/minerva-logo.png" alt="Minerva" className="w-12 h-12 rounded-full" />
           <div>
-            <h1 className="text-xl font-bold">Minerva — AI Agents for Real Estate</h1>
+            <h1 className="text-xl font-bold">Minerva · AI Agents for Real Estate</h1>
             <p className="text-xs text-gray-500">From real estate, for real estate.</p>
           </div>
         </a>
@@ -181,7 +181,7 @@ export default function Privacy() {
             <div id="contact">
               <h3 className="text-xl font-semibold">13) Contact</h3>
               <p className="mt-2 text-gray-700">
-                Minerva — AI Agents for Real Estate<br />
+                Minerva · AI Agents for Real Estate<br />
                 Email: <a className="text-indigo-700 underline" href="mailto:hello@minerva.ai">hello@minerva.ai</a>
               </p>
             </div>

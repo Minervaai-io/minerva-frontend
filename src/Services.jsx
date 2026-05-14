@@ -8,7 +8,7 @@ export default function Services() {
         <a href="/" className="flex items-center gap-3">
           <img src="/minerva-logo.png" alt="Minerva" className="w-14 h-14 rounded-full" />
           <div>
-            <h1 className="text-xl font-bold">Minerva — AI Agents for Real Estate</h1>
+            <h1 className="text-xl font-bold">Minerva · AI Agents for Real Estate</h1>
             <p className="text-sm text-gray-500">From real estate, for real estate.</p>
           </div>
         </a>
@@ -27,7 +27,7 @@ export default function Services() {
         <div className="max-w-5xl mx-auto px-6 py-16 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight">Done-for-you AI services that book viewings</h2>
           <p className="mt-4 text-lg text-gray-600">
-            We implement, train, and maintain voice/chat agents that convert ad clicks into scheduled tours—without adding headcount.
+            We implement, train, and maintain voice/chat agents that convert ad clicks into scheduled tours, without adding headcount.
           </p>
         </div>
       </section>
@@ -64,7 +64,7 @@ export default function Services() {
       <section className="bg-white border-y">
         <div className="max-w-6xl mx-auto px-6 py-16">
           <h3 className="text-2xl font-semibold">Plug-and-play integrations</h3>
-          <p className="text-gray-600 mt-2">We connect to your existing tools—no heavy lift from your team.</p>
+          <p className="text-gray-600 mt-2">We connect to your existing tools, no heavy lift from your team.</p>
           <div className="grid md:grid-cols-4 gap-4 mt-6">
             <div className="p-4 rounded-xl border bg-white text-sm">Meta Lead Ads</div>
             <div className="p-4 rounded-xl border bg-white text-sm">Google Ads / Forms</div>
@@ -197,7 +197,7 @@ export default function Services() {
           </div>
           <div className="bg-white p-6 rounded-xl border shadow-sm">
             <div className="font-semibold">Do you support multiple languages?</div>
-            <p className="text-gray-600 mt-2">Yes—agents can handle multiple languages/accents. We’ll confirm locales at kickoff.</p>
+            <p className="text-gray-600 mt-2">Yes. Agents can handle multiple languages and accents. We’ll confirm locales at kickoff.</p>
           </div>
         </div>
         <a href="/faq" className="inline-block mt-6 text-indigo-700 hover:underline">See all FAQs →</a>
@@ -221,7 +221,7 @@ export default function Services() {
       <footer className="bg-white border-t">
         <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-gray-600 grid md:grid-cols-4 gap-8">
           <div>
-            <strong className="block text-gray-900">Minerva — AI Agents for Real Estate</strong>
+            <strong className="block text-gray-900">Minerva · AI Agents for Real Estate</strong>
             <div className="mt-2">© {new Date().getFullYear()}</div>
           </div>
           <div>

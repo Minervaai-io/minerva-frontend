@@ -2,11 +2,11 @@ import React from "react";
 
 export default function ComparisonTable() {
   const rows = [
-    { label: "Up-front cost to the agency", us: "Zero — we cover ad spend", them: "Salaries + ad budget + tools" },
-    { label: "Risk if no deal closes", us: "Zero — pay only on close", them: "Full monthly burn either way" },
+    { label: "Up-front cost to the agency", us: "Zero. We cover ad spend.", them: "Salaries + ad budget + tools" },
+    { label: "Risk if no deal closes", us: "Zero. Pay only on close.", them: "Full monthly burn either way" },
     { label: "Speed to qualified meeting", us: "Under 60s, 24/7, multilingual", them: "Hours; off-hours gaps" },
     { label: "Buyer-language coverage", us: "Russian, English, Chinese, Arabic, more", them: "Usually English only" },
-    { label: "Compensation model", us: "30% on closed deals only", them: "Fixed salaries + commission" },
+    { label: "Compensation model", us: "20% for founding partners, on closed deals only", them: "Fixed salaries + commission" },
   ];
   return (
     <section className="max-w-6xl mx-auto px-6 py-16">

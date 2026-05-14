@@ -19,13 +19,13 @@ export default function ThreeStepOnboarding() {
         Go live in 3 steps
       </h3>
       <p className="text-gray-600 text-center mt-2">
-        No heavy lift for your team — we do the wiring, you see the bookings.
+        No heavy lift for your team. We do the wiring, you see the bookings.
       </p>
       <div className="grid md:grid-cols-3 gap-6 mt-8">
         <Step
           n={1}
           title="Connect"
-          desc="Ads (Meta/Google), calendars, and CRM — or start with Google Sheets."
+          desc="Ads (Meta/Google), calendars, and CRM, or start with Google Sheets."
         />
         <Step
           n={2}

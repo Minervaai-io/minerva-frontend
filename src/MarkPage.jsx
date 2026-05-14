@@ -97,7 +97,7 @@ export default function MarkPage() {
   return (
     <>
     <Helmet>
-      <title>Meet Mark — AI Lead Callback Agent for Real Estate | Minerva AI</title>
+      <title>Meet Mark, AI Lead Callback Agent for Real Estate | Minerva AI</title>
       <meta name="description" content="Mark calls back your ad leads within 60 seconds, qualifies prospects and books viewings automatically. Never lose another lead." />
     </Helmet>
     <div className="min-h-screen bg-gray-50 text-gray-900">
@@ -107,7 +107,7 @@ export default function MarkPage() {
           <a href="/" className="flex items-center gap-3">
             <img src="/minerva-logo.png" alt="Minerva" className="w-12 h-12 rounded-full" />
             <div>
-              <div className="text-lg font-bold">Minerva — AI Agents for Real Estate</div>
+              <div className="text-lg font-bold">Minerva · AI Agents for Real Estate</div>
               <div className="text-xs text-gray-500">From real estate, for real estate.</div>
             </div>
           </a>
@@ -126,7 +126,7 @@ export default function MarkPage() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
-              Mark — <span className="text-indigo-700">Instant Lead Callback</span>
+              Mark: <span className="text-indigo-700">Instant Lead Callback</span>
             </h1>
             <p className="mt-4 text-gray-600 text-lg">
               Mark auto-calls new ad/form leads in seconds, qualifies them, and books virtual or in-person tours.
@@ -174,7 +174,7 @@ export default function MarkPage() {
             {
               icon: PhoneCall,
               title: "Instant callbacks",
-              desc: "Connects to Meta/Google lead forms—dials within seconds.",
+              desc: "Connects to Meta/Google lead forms, dials within seconds.",
             },
             {
               icon: CheckCircle,
@@ -275,7 +275,7 @@ export default function MarkPage() {
         <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-gray-600 grid md:grid-cols-4 gap-8">
           <div>
             <strong className="block text-gray-900">
-              Minerva — AI Agents for Real Estate
+              Minerva · AI Agents for Real Estate
             </strong>
             <div className="mt-2">© {new Date().getFullYear()}</div>
           </div>

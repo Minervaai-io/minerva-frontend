@@ -112,7 +112,7 @@ export default function SarahPage() {
   return (
     <>
     <Helmet>
-      <title>Meet Sarah — AI Inbound Concierge for Real Estate | Minerva AI</title>
+      <title>Meet Sarah, AI Inbound Concierge for Real Estate | Minerva AI</title>
       <meta name="description" content="Sarah answers inbound calls from your website, Instagram and Google 24/7, handles FAQs and books viewings automatically. Never miss an inbound enquiry again." />
     </Helmet>
     <div className="min-h-screen bg-gray-50 text-gray-900">
@@ -126,7 +126,7 @@ export default function SarahPage() {
             />
             <div>
               <div className="text-lg font-bold">
-                Minerva — AI Agents for Real Estate
+                Minerva · AI Agents for Real Estate
               </div>
               <div className="text-xs text-gray-500">
                 From real estate, for real estate.
@@ -154,7 +154,7 @@ export default function SarahPage() {
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-14 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
-              Sarah —{" "}
+              Sarah:{" "}
               <span className="text-indigo-700">Inbound Concierge</span>
             </h1>
             <p className="mt-4 text-gray-600 text-lg">
@@ -313,7 +313,7 @@ export default function SarahPage() {
         <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-gray-600 grid md:grid-cols-4 gap-8">
           <div>
             <strong className="block text-gray-900">
-              Minerva — AI Agents for Real Estate
+              Minerva · AI Agents for Real Estate
             </strong>
             <div className="mt-2">
               © {new Date().getFullYear()}

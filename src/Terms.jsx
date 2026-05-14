@@ -39,7 +39,7 @@ export default function Terms() {
         <a href="/" className="flex items-center gap-3">
           <img src="/minerva-logo.png" alt="Minerva" className="w-12 h-12 rounded-full" />
           <div>
-            <h1 className="text-xl font-bold">Minerva — AI Agents for Real Estate</h1>
+            <h1 className="text-xl font-bold">Minerva · AI Agents for Real Estate</h1>
             <p className="text-xs text-gray-500">From real estate, for real estate.</p>
           </div>
         </a>

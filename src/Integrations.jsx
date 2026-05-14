@@ -25,7 +25,7 @@ export default function Integrations() {
         <a href="/" className="flex items-center gap-3">
           <img src="/minerva-logo.png" alt="Minerva" className="w-12 h-12 rounded-full" />
           <div>
-            <h1 className="text-xl font-bold">Minerva — AI Agents for Real Estate</h1>
+            <h1 className="text-xl font-bold">Minerva · AI Agents for Real Estate</h1>
             <p className="text-xs text-gray-500">From real estate, for real estate.</p>
           </div>
         </a>
@@ -41,7 +41,7 @@ export default function Integrations() {
         <div className="max-w-6xl mx-auto px-6 py-14 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight">Works with your stack</h2>
           <p className="mt-3 text-gray-600">
-            Plug in your ads, calendars, CRMs, and channels—go live without heavy engineering.
+            Plug in your ads, calendars, CRMs, and channels. Go live without heavy engineering.
           </p>
         </div>
       </section>

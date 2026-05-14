@@ -46,15 +46,15 @@ export default function HomePage() {
 return (
   <>
     <Helmet>
-      <title>Phuket Real Estate Lead Engine — You Pay 30% Only on Closed Deals | Minerva AI</title>
-      <meta name="description" content="Minerva runs the entire commercial stack for Phuket real estate agencies and developers: paid ads, AI lead qualification, multilingual nurture, CRM, and booked viewings. You pay 30% commission only when a deal closes. No retainer." />
+      <title>Phuket Real Estate Lead Engine | 20% Founder Rate on Closed Deals Only | Minerva AI</title>
+      <meta name="description" content="Minerva runs the entire commercial stack for Phuket real estate agencies and developers: paid ads, AI lead qualification, multilingual nurture, CRM, and booked viewings. Founding partners pay 20% of commission only when a deal closes. No retainer." />
     </Helmet>
     <div className="min-h-screen bg-gray-50 text-gray-900">      {/* HEADER */}
       <header className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between relative">
         <div className="flex items-center gap-4">
           <img src="/minerva-logo.png" alt="Minerva Logo" className="w-24 h-24 rounded-full" />
           <div>
-            <h1 className="text-xl font-semibold">Minerva — AI Agents for Real Estate</h1>
+            <h1 className="text-xl font-semibold">Minerva · AI Agents for Real Estate</h1>
             <p className="text-sm text-gray-500">Your AI outreach team that never sleeps.</p>
           </div>
         </div>
@@ -82,11 +82,11 @@ return (
       {/* ===== CAROUSEL (moved to top, right under header) ===== */}
       <main id="agents" className="max-w-6xl mx-auto px-6 pt-8 pb-12">
         <h2 className="text-3xl font-bold text-center mb-10 text-indigo-700">
-          Meet Your AI Team — Always Ready to Work for You
+          Meet Your AI Team. Always Ready to Work for You.
         </h2>
         <p className="text-center max-w-2xl mx-auto text-gray-600 mb-12">
           Each Minerva agent is designed with a unique role to supercharge your sales pipeline.
-          Whether it’s instant lead callbacks, inbound call handling, or long-term nurturing — your AI team has it covered.
+          Whether it’s instant lead callbacks, inbound call handling, or long-term nurturing, your AI team has it covered.
         </p>
 
         <div className="relative flex items-center justify-center">
@@ -161,27 +161,27 @@ return (
       <section className="bg-white py-16 border-y">
         <div className="max-w-4xl mx-auto text-center px-6">
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-            Your entire Phuket sales engine — for 30% of what you close.
+            Your entire Phuket sales engine. 20% of commission for founding partners.
           </h2>
           <p className="mt-5 text-lg text-gray-700 leading-relaxed">
             Stop hiring marketing, qualifiers, and follow-up staff. Minerva runs paid acquisition, AI lead qualification,
             multilingual nurture, CRM, and viewing-booking for real estate agencies and developers in Phuket.
-            You pay <strong>0% until a deal closes</strong>. <strong>30% of commission on closed deals only.</strong> No retainer. No media spend on you.
+            You pay <strong>0% until a deal closes</strong>. <strong>Founding partners pay 20% of commission on closed deals only.</strong> No retainer. No media spend on you.
           </p>
           <p className="mt-3 text-md text-gray-500">
-            International buyers from Russia, Europe, China, and the Middle East — qualified in their language, 24/7,
+            International buyers from Russia, Europe, China, and the Middle East, qualified in their language, 24/7,
             before they ever hit your team's calendar.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <a href="/contact" className="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow-sm">
-              Apply for a partner slot
+              Apply for a founding-partner slot
             </a>
             <a href="#agents" className="inline-block px-6 py-3 border border-gray-300 font-semibold rounded-lg hover:bg-gray-50">
               See how the pipeline works
             </a>
           </div>
           <p className="mt-4 text-xs text-gray-400">
-            Pay-on-results partnership. We cover the ad spend. You only pay when a villa or condo closes.
+            Pay-on-results partnership. We cover the ad spend. You only pay when a villa or condo closes. A small number of founding-partner slots are open at the locked 20% rate.
           </p>
         </div>
       </section>
@@ -200,19 +200,19 @@ return (
             <div className="bg-white p-6 rounded-xl border shadow-sm">
               <h4 className="font-semibold text-indigo-700 text-lg">Where your buyers come from</h4>
               <ul className="mt-4 space-y-3 text-gray-700">
-                <li>• <strong>Russia &amp; CIS</strong> — leading buyer cohort for Phuket condos and villas, mostly cash</li>
-                <li>• <strong>China &amp; Hong Kong</strong> — HNW investors, long-stay residency interest</li>
-                <li>• <strong>Europe</strong> — UK, Germany, France, Switzerland; lifestyle + investment</li>
-                <li>• <strong>Middle East</strong> — Gulf HNW, premium villa segment</li>
+                <li>• <strong>Russia &amp; CIS:</strong> leading buyer cohort for Phuket condos and villas, mostly cash</li>
+                <li>• <strong>China &amp; Hong Kong:</strong> HNW investors, long-stay residency interest</li>
+                <li>• <strong>Europe:</strong> UK, Germany, France, Switzerland; lifestyle + investment</li>
+                <li>• <strong>Middle East:</strong> Gulf HNW, premium villa segment</li>
               </ul>
             </div>
             <div className="bg-white p-6 rounded-xl border shadow-sm">
               <h4 className="font-semibold text-indigo-700 text-lg">How we localize</h4>
               <ul className="mt-4 space-y-3 text-gray-700">
-                <li>• <strong>Multilingual AI qualification</strong> — Russian, English, Chinese, Arabic, French — by voice and WhatsApp</li>
-                <li>• <strong>Native-language ad creative</strong> — AI-generated video, fresh weekly, per market</li>
-                <li>• <strong>Buyer questions we pre-screen</strong> — visa status, Thai company structures, BOI residency, financing</li>
-                <li>• <strong>Channel-aware</strong> — works alongside any portal traffic (Juwai, Prian, Tranio) you already pay for</li>
+                <li>• <strong>Multilingual AI qualification:</strong> Russian, English, Chinese, Arabic, French, by voice and WhatsApp</li>
+                <li>• <strong>Native-language ad creative:</strong> AI-generated video, fresh weekly, per market</li>
+                <li>• <strong>Buyer questions we pre-screen:</strong> visa status, Thai company structures, BOI residency, financing</li>
+                <li>• <strong>Channel-aware:</strong> works alongside any portal traffic (Juwai, Prian, Tranio) you already pay for</li>
               </ul>
             </div>
           </div>
@@ -230,7 +230,7 @@ return (
       <footer className="mt-16 border-t pt-12 pb-12 text-sm text-gray-600 bg-white">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-10">
           <div>
-            <strong className="block text-gray-900">Minerva — AI Agents for Real Estate</strong>
+            <strong className="block text-gray-900">Minerva · AI Agents for Real Estate</strong>
             <div className="mt-2 text-gray-500">
               Built for agencies & property developers. © {new Date().getFullYear()}
             </div>

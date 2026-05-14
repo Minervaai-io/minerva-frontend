@@ -9,7 +9,7 @@ export default function WhoWeAre() {
         <a href="/" className="flex items-center gap-3">
           <img src="/minerva-logo.png" alt="Minerva" className="w-14 h-14 rounded-full" />
           <div>
-            <h1 className="text-xl font-bold">Minerva — Phuket Real Estate Lead Engine</h1>
+            <h1 className="text-xl font-bold">Minerva · Phuket Real Estate Lead Engine</h1>
             <p className="text-sm text-gray-500">Built in Phuket. Paid only when you close.</p>
           </div>
         </a>
@@ -51,19 +51,18 @@ export default function WhoWeAre() {
             )}
             <div>
               <h3 className="text-2xl font-semibold">Tarek Sankari</h3>
-              <p className="text-sm text-gray-500">Founder, Minerva — based in Phuket</p>
+              <p className="text-sm text-gray-500">Founder, Minerva · based in Phuket</p>
             </div>
           </div>
           <p className="text-gray-700 leading-relaxed">
-            I'm Tarek. After years running paid acquisition for property developers, I watched the same pattern over and over:
-            qualified foreign buyers would fill out a form, and then go cold because nobody called them back in time —
-            sometimes for hours, sometimes for days. Most of those buyers ended up closing somewhere else.
+            I'm Tarek. After years running paid acquisition for property developers, I watched the same pattern over and over.
+            Qualified foreign buyers would fill out a form, and then go cold because nobody called them back in time, sometimes for hours, sometimes for days. Most of those buyers ended up closing somewhere else.
           </p>
           <p className="mt-4 text-gray-700 leading-relaxed">
             So I moved to Phuket and built the stack I wished my clients had: Meta and Google ads, multilingual AI qualification,
             WhatsApp and voice nurture, a CRM that actually fires, and warm handoffs straight to the closer's calendar.
-            And I run it as a partnership — Minerva pays the ad spend, takes 30% of the commission on closed deals, and earns
-            nothing otherwise.
+            I run it as a partnership. Minerva pays the ad spend, takes a share of commission only when a deal closes, and earns
+            nothing otherwise. Founding partners lock 20%.
           </p>
           <p className="mt-4 text-gray-700 leading-relaxed">
             If you're a Phuket agency or developer with closers but no consistent inbound, that's what I'm here for.
@@ -79,7 +78,7 @@ export default function WhoWeAre() {
             <p className="mt-3 text-gray-700 leading-relaxed">
               Most agencies and developers in Phuket cobble together a marketing person, an outsourced media buyer,
               an admin who manages the CRM, and a junior who chases follow-ups. That stack is expensive, slow, and
-              loses leads after hours and on weekends — exactly when international buyers in different time zones are browsing.
+              loses leads after hours and on weekends, exactly when international buyers in different time zones are browsing.
             </p>
             <p className="mt-3 text-gray-700 leading-relaxed">
               Minerva replaces all of it. You keep your closers. We bring the qualified, viewing-ready meetings.
@@ -90,10 +89,10 @@ export default function WhoWeAre() {
             <ul className="mt-4 space-y-3 text-gray-700">
               <li>• <strong>Paid acquisition:</strong> Meta + Google ads targeting buyers in Russia, Europe, China, MENA</li>
               <li>• <strong>AI qualification:</strong> voice + WhatsApp, multilingual, 24/7, in under 60 seconds</li>
-              <li>• <strong>Nurture sequences:</strong> WhatsApp, SMS, email, AI voice — until they're ready to view</li>
+              <li>• <strong>Nurture sequences:</strong> WhatsApp, SMS, email, AI voice, until they're ready to view</li>
               <li>• <strong>CRM:</strong> we own the pipeline; you see the dashboard</li>
               <li>• <strong>Viewing booking:</strong> straight into your closer's calendar</li>
-              <li>• <strong>Compensation:</strong> 30% on closed deals only. Nothing if we don't deliver.</li>
+              <li>• <strong>Compensation:</strong> 20% for founding partners, on closed deals only. Nothing if we don't deliver.</li>
             </ul>
           </div>
         </div>
@@ -138,7 +137,7 @@ export default function WhoWeAre() {
       <footer className="bg-white border-t">
         <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-gray-600 grid md:grid-cols-4 gap-8">
           <div>
-            <strong className="block text-gray-900">Minerva — Phuket Real Estate Lead Engine</strong>
+            <strong className="block text-gray-900">Minerva · Phuket Real Estate Lead Engine</strong>
             <div className="mt-2">© {new Date().getFullYear()}</div>
           </div>
           <div>

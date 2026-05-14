@@ -8,7 +8,7 @@ export default function WhyChooseUs() {
         <a href="/" className="flex items-center gap-3">
           <img src="/minerva-logo.png" alt="Minerva" className="w-14 h-14 rounded-full" />
           <div>
-            <h1 className="text-xl font-bold">Minerva — AI Agents for Real Estate</h1>
+            <h1 className="text-xl font-bold">Minerva · AI Agents for Real Estate</h1>
             <p className="text-sm text-gray-500">From real estate, for real estate.</p>
           </div>
         </a>
@@ -27,7 +27,7 @@ export default function WhyChooseUs() {
         <div className="max-w-5xl mx-auto px-6 py-16 text-center">
           <h2 className="text-4xl font-extrabold">Why Phuket agencies and developers pick Minerva</h2>
           <p className="mt-4 text-lg text-gray-600">
-            We replace your marketing team, your media buyer, your lead qualifier, and your CRM admin — and you only pay
+            We replace your marketing team, your media buyer, your lead qualifier, and your CRM admin. You only pay
             when a deal actually closes.
           </p>
         </div>
@@ -37,15 +37,15 @@ export default function WhyChooseUs() {
       <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
         <div className="bg-white p-6 rounded-xl border shadow-sm">
           <h4 className="font-semibold text-indigo-700">Aligned incentives</h4>
-          <p className="text-gray-600 mt-2">30% commission on closed deals only. No retainer, no media spend on you. We win when you win.</p>
+          <p className="text-gray-600 mt-2">Commission only on closed deals. 20% for founding partners. No retainer, no media spend on you. We win when you win.</p>
         </div>
         <div className="bg-white p-6 rounded-xl border shadow-sm">
           <h4 className="font-semibold text-indigo-700">Phuket-focused</h4>
-          <p className="text-gray-600 mt-2">One market, multiple buyer nationalities — Russian, European, Chinese, Middle Eastern. Localized ad creative and multilingual qualification.</p>
+          <p className="text-gray-600 mt-2">One market, multiple buyer nationalities: Russian, European, Chinese, Middle Eastern. Localized ad creative and multilingual qualification.</p>
         </div>
         <div className="bg-white p-6 rounded-xl border shadow-sm">
           <h4 className="font-semibold text-indigo-700">Full stack, hands-off</h4>
-          <p className="text-gray-600 mt-2">Ads, AI qualification, nurture, CRM, viewing-booking — we run it all. You walk into pre-qualified meetings.</p>
+          <p className="text-gray-600 mt-2">Ads, AI qualification, nurture, CRM, viewing-booking: we run it all. You walk into pre-qualified meetings.</p>
         </div>
       </section>
 
@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
                 </tr>
                 <tr className="border-t">
                   <td className="p-4 font-medium">Compensation model</td>
-                  <td className="p-4">30% of commission on closed deals only</td>
+                  <td className="p-4">20% of commission for founding partners, on closed deals only</td>
                   <td className="p-4">Fixed salaries + ad budget + commission</td>
                 </tr>
               </tbody>
@@ -134,7 +134,7 @@ export default function WhyChooseUs() {
       <footer className="bg-white border-t">
         <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-gray-600 grid md:grid-cols-4 gap-8">
           <div>
-            <strong className="block text-gray-900">Minerva — AI Agents for Real Estate</strong>
+            <strong className="block text-gray-900">Minerva · AI Agents for Real Estate</strong>
             <div className="mt-2">© {new Date().getFullYear()}</div>
           </div>
           <div>
