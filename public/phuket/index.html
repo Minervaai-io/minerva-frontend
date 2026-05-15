@@ -586,6 +586,17 @@ function handleSubmit(e) {
   data.fbp = getCookie('_fbp');
   data.fbc = getCookie('_fbc');
 
+  // IG/FB in-app browsers block the Pixel, so _fbp/_fbc cookies never set
+  // and Meta can't attribute the conversion. Rebuild fbc from the click
+  // URL's fbclid (Meta's documented format); synthesize fbp as fallback.
+  if (!data.fbc) {
+    const fbclid = params.get('fbclid');
+    if (fbclid) data.fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+  }
+  if (!data.fbp) {
+    data.fbp = 'fb.1.' + Date.now() + '.' + Math.floor(Math.random() * 1e10);
+  }
+
   // GHL workflow trigger — fires Retell call + CAPI bridge
   fetch('https://services.leadconnectorhq.com/hooks/G8dDjRQuFjerRmdyaJiT/webhook-trigger/b51b3602-379f-4c52-ab20-14c0c58f37cb', {
     method: 'POST',
