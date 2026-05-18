@@ -58,39 +58,110 @@ return (
             <p className="text-sm text-gray-500">Your AI outreach team that never sleeps.</p>
           </div>
         </div>
-        {/* Sidebar Menu Toggle */}
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-700">
+          <a href="/who-we-are" className="hover:text-indigo-600">Who We Are</a>
+          <a href="/services" className="hover:text-indigo-600">Services</a>
+          <a href="/why-choose-us" className="hover:text-indigo-600">Why Choose Us</a>
+          <a href="/faq" className="hover:text-indigo-600">FAQ</a>
+          <a href="/contact" className="hover:text-indigo-600">Contact</a>
+          <a
+            href="/contact"
+            className="inline-block px-5 py-2.5 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow-sm"
+          >
+            Apply for a founding-partner slot
+          </a>
+        </nav>
+
+        {/* Mobile menu toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="p-2 rounded-md bg-indigo-600 text-white"
+          className="md:hidden p-2 rounded-md bg-indigo-600 text-white"
+          aria-label="Open menu"
         >
           <Menu size={20} />
         </button>
 
         {menuOpen && (
-          <div className="absolute top-20 right-6 w-48 bg-white border rounded-lg shadow-lg z-50">
+          <div className="md:hidden absolute top-24 right-6 w-60 bg-white border rounded-lg shadow-lg z-50">
             <ul className="p-4 space-y-3 text-sm">
-              <li><a href="/who-we-are" className="hover:underline">Who Are We</a></li>
+              <li><a href="/who-we-are" className="hover:underline">Who We Are</a></li>
               <li><a href="/services" className="hover:underline">Services</a></li>
               <li><a href="/why-choose-us" className="hover:underline">Why Choose Us</a></li>
               <li><a href="/faq" className="hover:underline">FAQ</a></li>
               <li><a href="/contact" className="hover:underline">Contact Us</a></li>
+              <li className="pt-2 border-t">
+                <a
+                  href="/contact"
+                  className="block text-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700"
+                >
+                  Apply for a founding-partner slot
+                </a>
+              </li>
             </ul>
           </div>
         )}
       </header>
 
-      {/* ===== CAROUSEL (moved to top, right under header) ===== */}
+      {/* ===== HERO / OFFER (now above the fold) ===== */}
+      <section className="bg-white py-16 border-y">
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+            Your entire Phuket sales engine. 20% of commission for founding partners.
+          </h2>
+          <p className="mt-5 text-lg text-gray-700 leading-relaxed">
+            Stop hiring marketing, qualifiers, and follow-up staff. Minerva runs paid acquisition, AI lead qualification,
+            multilingual nurture, CRM, and viewing-booking for real estate agencies and developers in Phuket.
+            You pay <strong>0% until a deal closes</strong>. <strong>Founding partners pay 20% of commission on closed deals only.</strong> No retainer. No media spend on you.
+          </p>
+          <p className="mt-3 text-md text-gray-500">
+            International buyers from Russia, Europe, China, and the Middle East, qualified in their language, 24/7,
+            before they ever hit your team's calendar.
+          </p>
+          <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <a href="/contact" className="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow-sm">
+              Apply for a founding-partner slot
+            </a>
+            <a href="#agents" className="inline-block px-6 py-3 border border-gray-300 font-semibold rounded-lg hover:bg-gray-50">
+              See how the pipeline works
+            </a>
+          </div>
+          <p className="mt-4 text-xs text-gray-400">
+            Pay-on-results partnership. We cover the ad spend. You only pay when a villa or condo closes. A small number of founding-partner slots are open at the locked 20% rate.
+          </p>
+        </div>
+      </section>
+
+      {/* ===== TRUST STRIP (why a new player is safe to bet on) ===== */}
+      <section className="bg-gray-50 border-b">
+        <div className="max-w-6xl mx-auto px-6 py-10 grid gap-6 sm:grid-cols-3 text-center">
+          <div>
+            <div className="text-2xl font-extrabold text-indigo-700">Founder-led</div>
+            <p className="mt-2 text-sm text-gray-600">Run personally by Tarek, on the ground in Phuket. You deal with the person accountable, not an account manager.</p>
+          </div>
+          <div>
+            <div className="text-2xl font-extrabold text-indigo-700">Zero risk</div>
+            <p className="mt-2 text-sm text-gray-600">No retainer. No media spend on you. You pay only when a villa or condo actually closes.</p>
+          </div>
+          <div>
+            <div className="text-2xl font-extrabold text-indigo-700">Phuket-only</div>
+            <p className="mt-2 text-sm text-gray-600">Not Bangkok, not Bali, not Dubai. One market, foreign-buyer demand, qualified in their language, 24/7.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== AI TEAM (live demo as proof, below the offer) ===== */}
       <main id="agents" className="max-w-6xl mx-auto px-6 pt-8 pb-12">
-        <h2 className="text-3xl font-bold text-center mb-10 text-indigo-700">
-          Meet Your AI Team. Always Ready to Work for You.
+        <h2 className="text-3xl font-bold text-center mb-3 text-indigo-700">
+          Don't take our word for it. Talk to one.
         </h2>
         <p className="text-center max-w-2xl mx-auto text-gray-600 mb-12">
-          Each Minerva agent is designed with a unique role to supercharge your sales pipeline.
-          Whether it’s instant lead callbacks, inbound call handling, or long-term nurturing, your AI team has it covered.
+          These are live AI agents, not a video. Pick one and have a real voice conversation right now, in your browser,
+          the same way an international buyer would. Instant lead callbacks, inbound calls, and long-term nurture: hear it yourself.
         </p>
 
         <div className="relative flex items-center justify-center">
-          <div className="relative w-full h-[720px] md:h-[680px] flex items-center justify-center overflow-visible">
+          <div className="relative w-full h-[800px] md:h-[680px] flex items-center justify-center overflow-hidden">
             {agents.map((agent, idx) => {
               const isActive = idx === currentIndex;
               const isPrev = idx === (currentIndex - 1 + agents.length) % agents.length;
@@ -119,7 +190,7 @@ return (
                         href={agent.link}
                         className="mt-4 inline-block bg-indigo-600 px-5 py-2 rounded-md text-white shadow hover:bg-indigo-700"
                       >
-                        Meet {agent.name}
+                        Talk to {agent.name} live
                       </a>
                     </div>
                   )}
@@ -156,35 +227,6 @@ return (
           ))}
         </div>
       </main>
-
-      {/* ===== HERO / INTRO (moved below carousel) ===== */}
-      <section className="bg-white py-16 border-y">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-            Your entire Phuket sales engine. 20% of commission for founding partners.
-          </h2>
-          <p className="mt-5 text-lg text-gray-700 leading-relaxed">
-            Stop hiring marketing, qualifiers, and follow-up staff. Minerva runs paid acquisition, AI lead qualification,
-            multilingual nurture, CRM, and viewing-booking for real estate agencies and developers in Phuket.
-            You pay <strong>0% until a deal closes</strong>. <strong>Founding partners pay 20% of commission on closed deals only.</strong> No retainer. No media spend on you.
-          </p>
-          <p className="mt-3 text-md text-gray-500">
-            International buyers from Russia, Europe, China, and the Middle East, qualified in their language, 24/7,
-            before they ever hit your team's calendar.
-          </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <a href="/contact" className="inline-block px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 shadow-sm">
-              Apply for a founding-partner slot
-            </a>
-            <a href="#agents" className="inline-block px-6 py-3 border border-gray-300 font-semibold rounded-lg hover:bg-gray-50">
-              See how the pipeline works
-            </a>
-          </div>
-          <p className="mt-4 text-xs text-gray-400">
-            Pay-on-results partnership. We cover the ad spend. You only pay when a villa or condo closes. A small number of founding-partner slots are open at the locked 20% rate.
-          </p>
-        </div>
-      </section>
 
       {/* ===== Built for Phuket ===== */}
       <section className="bg-gray-50 py-16">
@@ -253,8 +295,11 @@ return (
           </div>
           <div>
             <h4 className="font-semibold text-gray-900 mb-3">Get in Touch</h4>
-            <p>Email: contact@minerva-ai.io</p>
-            <p className="mt-2">LinkedIn · Twitter · Instagram</p>
+            <p>Email: <a href="mailto:contact@minerva-ai.io" className="text-indigo-700 hover:underline">contact@minerva-ai.io</a></p>
+            <p className="mt-2 space-x-3">
+              <a href="https://www.linkedin.com/in/tarek-sankari-787ba0363/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
+              <a href="https://www.instagram.com/minervaaiio/" target="_blank" rel="noopener noreferrer" className="hover:underline">Instagram</a>
+            </p>
           </div>
         </div>
       </footer>
