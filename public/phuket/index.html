@@ -569,11 +569,40 @@ function genEventId() {
   return 'mv_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
 }
 
+// Normalise a typed phone number to E.164 (+<cc><number>). GHL stores the
+// number exactly as sent and the Retell webhook's {{contact.phone}} reads
+// that raw value — a UK-format "07768 502561" makes Retell reject the call
+// ("not a valid number ... e.164 format"). Default country = GB (campaign
+// is GB-targeted); any number the user types with an explicit +<cc> or 00
+// prefix keeps its own country. Pure JS, no dependency, never blocks submit.
+function toE164(raw, defaultCC) {
+  defaultCC = defaultCC || '44';
+  if (!raw) return raw;
+  var s = String(raw).trim();
+  if (s.indexOf('+') === 0) {
+    s = '+' + s.slice(1).replace(/\D/g, '');
+  } else {
+    var d = s.replace(/\D/g, '');
+    if (!d) return raw;
+    if (d.slice(0, 2) === '00') s = '+' + d.slice(2);            // intl prefix
+    else if (d.charAt(0) === '0') s = '+' + defaultCC + d.slice(1); // national
+    else if (d.slice(0, defaultCC.length) === defaultCC) s = '+' + d;
+    else s = '+' + defaultCC + d;
+  }
+  // Sanity: + followed by 8–15 digits. If it fails, return the original so
+  // we degrade to today's behaviour rather than break the submission.
+  return /^\+\d{8,15}$/.test(s) ? s : raw;
+}
+
 // Form submit — wires browser pixel + server-side CAPI deduplication
 function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const data = Object.fromEntries(new FormData(form));
+
+  // E.164-normalise the phone before anything downstream sees it (GHL
+  // stores it raw; the Retell webhook reads {{contact.phone}} verbatim).
+  if (data.phone) data.phone = toE164(data.phone, '44');
 
   // Shared dedup ID: same value goes to browser pixel and to server CAPI
   const event_id = genEventId();
@@ -621,11 +650,28 @@ function handleSubmit(e) {
     });
   }
 
+  // Conversion goal: drop the lead straight into booking instead of a
+  // passive "we'll contact you" dead-end. The GHL "20-min Discovery with
+  // Tarek" calendar is auto-confirm; prefill what they just typed so it's
+  // two clicks. This removes the human-in-the-loop dependency entirely.
+  const nm = (data.name || '').trim().split(/\s+/);
+  const bookingParams = new URLSearchParams({
+    first_name: nm[0] || '',
+    last_name: nm.slice(1).join(' '),
+    email: data.email || '',
+    phone: data.phone || ''
+  });
+  const bookingUrl = 'https://api.leadconnectorhq.com/widget/booking/1Mxu2rM0ZshPPHhNJVQw?' + bookingParams.toString();
+  const firstName = nm[0] ? (', ' + nm[0]) : '';
+
   form.innerHTML = `
-    <div style="text-align:center;padding:2rem 0">
-      <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--c-gold);margin-bottom:.5rem">Thank you!</div>
-      <p style="color:var(--c-muted);font-size:.9rem">A Phuket property specialist will contact you within 24 hours.</p>
+    <div style="text-align:center;padding:1rem 0 1.25rem">
+      <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--c-gold);margin-bottom:.35rem">You're in${firstName}.</div>
+      <p style="color:var(--c-muted);font-size:.95rem;margin:0">Last step: pick a time below and your 20-minute call with Tarek, Minerva's founder, is booked. No sales team, no waiting around.</p>
     </div>
+    <iframe src="${bookingUrl}" title="Book your call with Tarek"
+      style="width:100%;min-height:720px;border:0;border-radius:12px;background:#fff"
+      scrolling="yes" loading="eager"></iframe>
   `;
 
   console.log('Lead data:', data);
